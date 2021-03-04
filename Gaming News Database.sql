@@ -1,0 +1,82 @@
+CREATE TABLE IF NOT EXISTS User_data
+(
+	id BIGINT NOT NULL PRIMARY KEY,
+	name VARCHAR NOT NULL,
+	username VARCHAR NOT NULL, 
+	email VARCHAR UNIQUE NOT NULL,
+	password_hash VARCHAR NOT NULL,
+	fav_game TEXT,  
+	about TEXT, 
+	image VARCHAR, 
+	date_created DATE NOT NULL, 
+	country VARCHAR, 
+	city VARCHAR,
+	gender VARCHAR 
+);
+
+CREATE TABLE IF NOT EXISTS Article
+(
+	id SERIAL NOT NULL PRIMARY KEY,
+	content TEXT NOT NULL,
+	rating DECIMAL NOT NULL DEFAULT 0, 
+	views INT,
+	user_id BIGINT REFERENCES User_data(id) NOT NULL  
+);
+
+CREATE TABLE IF NOT EXISTS Platform
+(
+	id SERIAL NOT NULL PRIMARY KEY,
+	name VARCHAR NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Genre
+(
+	id SERIAL NOT NULL PRIMARY KEY,
+	name VARCHAR NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Game
+(
+	id SERIAL NOT NULL PRIMARY KEY,
+	name VARCHAR NOT NULL, 
+	publisher VARCHAR NOT NULL, 
+	cost DECIMAL NOT NULL, 
+	date_published DATE NOT NULL, 
+	description TEXT NOT NULL, 
+	rating DECIMAL NOT NULL DEFAULT 0, 
+	image VARCHAR, 
+	genre_id BIGINT REFERENCES Genre(id) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Ptaform_Game
+(
+	platform_id BIGINT REFERENCES Platform(id) NOT NULL, 	
+	game_id BIGINT REFERENCES Game(id) NOT NULL,
+	PRIMARY KEY(platform_id, game_id)
+);
+
+CREATE TABLE IF NOT EXISTS Review
+(
+	id SERIAL NOT NULL PRIMARY KEY,
+	date_published DATE NOT NULL,
+	content TEXT NOT NULL, 
+	rate DECIMAL NOT NULL,
+	game_id BIGINT REFERENCES Game(id) NOT NULL, 
+	user_id BIGINT REFERENCES User_data(id) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Cart_Item
+(
+	id SERIAL NOT NULL PRIMARY KEY,
+	user_id BIGINT REFERENCES User_data(id) NOT NULL, 
+	game_id BIGINT REFERENCES Game(id) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Comment
+(
+	id SERIAL NOT NULL PRIMARY KEY,
+	content TEXT NOT NULL,
+	upvote_rating INT NOT NULL, 
+	game_id BIGINT REFERENCES Game(id) NOT NULL,
+	user_id BIGINT REFERENCES User_data(id) NOT NULL	
+);
