@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\GitHub\\Gaming-Site\\Playstore\\Playstore\\Playstore.csproj": {}
+    "C:\\Users\\1\\Documents\\GitHub\\Gaming-Site\\Playstore\\Playstore\\Playstore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\GitHub\\Gaming-Site\\Playstore\\Playstore\\Playstore.csproj": {
+    "C:\\Users\\1\\Documents\\GitHub\\Gaming-Site\\Playstore\\Playstore\\Playstore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\Gaming-Site\\Playstore\\Playstore\\Playstore.csproj",
+        "projectUniqueName": "C:\\Users\\1\\Documents\\GitHub\\Gaming-Site\\Playstore\\Playstore\\Playstore.csproj",
         "projectName": "Playstore",
-        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\Gaming-Site\\Playstore\\Playstore\\Playstore.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\Gaming-Site\\Playstore\\Playstore\\obj\\",
+        "projectPath": "C:\\Users\\1\\Documents\\GitHub\\Gaming-Site\\Playstore\\Playstore\\Playstore.csproj",
+        "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\1\\Documents\\GitHub\\Gaming-Site\\Playstore\\Playstore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,22 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
