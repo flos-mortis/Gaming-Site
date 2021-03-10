@@ -1,94 +1,134 @@
-<!DOCTYPE html>
-<html class="homepage">
-    <head>
-        <title>Playstore</title>
-        <link rel="stylesheet" type="text/css" href="css/site.css">
-        <script src="script/site.js"></script>
-    </head>
-    <body>
-        <header>
-            <div class="container">
-                <div class="row">
-                    <div class="logo">
-                        <div class="logo-image">
-                            <a href="index.html">
-                                <img class="logo-img" src="image/logo.png">
-                            </a>
-                        </div>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Playstore</title>
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="logo">
+                    <div class="logo-image">
+                        <a href="index.html">
+                            <img class="logo-img" src="image/logo.png">
+                        </a>
                     </div>
-                    <div class="head-right">
-                        <div class="head-login">
-                            <a href="#"><button class="register-switch">
+                </div>
+                <div class="head-right">
+                    <div class="head-login">
+                        <a href="#">
+                            <button class="register-switch">
                                 Sign Up
-                            </button></a>
-                        </div>
-                        <!--ДОДЕЛАТЬ-->
-                        <div class="head-search">
-                            <button class="btn btn-search">
-                                <img src="image/search-icon.png" class="search-img">
                             </button>
-                            <div class="search">
-                                <form action="" class="search-form"></form>
+                        </a>
+                    </div>
+                    <!--ДОДЕЛАТЬ-->
+                    <div class="head-search">
+                        <button class="btn btn-search">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <div class="search">
+                            <form action="" class="search-form"></form>
+                        </div>
+                    </div>
+                    <!--ДОДЕЛАТЬ-->
+                    <div class="head-cart">
+                        <button class="btn btn-cart" type="button">
+                            <i class="fa fa-shopping-cart"></i>
+                            <p><span class="total-product">0</span></p>
+                        </button>
+                    </div>
+                    <div class="language-switcher">
+                        <a href="#">
+                            <img src="image/en-flag.jpg" class="en-flag">
+                        </a>
+                        <a href="#">
+                            <img src="image/ru-flag.jpg" class="ru-flag">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav id="t3-mainnav" class="wrap navbar navbar-default t3-mainnav">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </nav>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footer-col footer-col-left" style="min-height: 322px;">
+                    <div class="footer-col-inner">
+                        <div class="col">
+                            <div class="social-list">
+                                <a title="Twitter" href="#" target="_blank">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a title="YouTube" href="#" target="_blank">
+                                    <i class="fa fa-youtube"></i>
+                                </a>
+                                <a title="Vkontakte" href="#" target="_blank">
+                                    <i class="fa fa-vk"></i>
+                                </a>
                             </div>
                         </div>
-                        <!--ДОДЕЛАТЬ-->
-                        <div class="head-cart">
-                            <button class="btn btn-cart" type="button">
-                                <img class="cart-img" src="image/shopping-cart.png">
-                                <p><span class="total-product">0</span></p>
-                            </button>
+                    </div>
+                    <div class="footer-col-inner" id="footer-links">
+                        <div class="col">
+                            <div class="col-module">
+                                <h3 class="module-title">
+                                    <span>Information</span>
+                                </h3>
+                                <ul class="module-content">
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="language-switcher">
-                            <a href="#">
-                                <img src="image/en-flag.jpg" class="en-flag">
-                            </a>
-                            <a href="#">
-                                <img src="image/ru-flag.jpg" class="ru-flag">
-                            </a>
+                        <div class="col">
+                            <div class="col-module">
+                                <h3 class="module-title">
+                                    <span>My Account</span>
+                                </h3>
+                                <ul class="module-content">
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">Order History</a></li>
+                                    <li><a href="#">Shopping Cart</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-col footer-col-right" style="min-height: 322px;">
+                    <div class="footer-col-inner footer-right">
+                        <h3 class="module-title" id="contact-us-title"><span>Contact Us</span></h3>
+                        <div class="module-content">
+                            <div class="contact-us">
+                                <h4>Warehouse & Offices</h4>
+                                <p>Guildford, Guildford, Surrey, GU1, United Kingdom</p>
+                                <h4>Retail Store</h4>
+                                <p>Saint Edburghs Road, Birmingham, West Midlands, B25 8YA, United Kingdom</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
-        <nav id="t3-mainnav" class="wrap navbar navbar-default t3-mainnav">
+        </div>
+        <section class="copyright">
             <div class="container">
-                @RenderBody()
-            </div>
-        </nav>
-        <footer id="t3-footer" class="wrap t3-foot">
-            <div class="container">
-                <div class="row equal-height">
-                    <div class="col col-sm-12 col-md-9 t3-footnav" style="min-height: 322px" childheight="276">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="t3-spotlight t3-footnav1 row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="t3-module module" id="Mod119">
-                                            <ul class="social-list">
-                                                <li>
-                                                    <a class="youtube">
-                                                        <img src="" class="yt-image" />
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="vk">
-                                                        <img src="" class="vk-image" />
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="instagram">
-                                                        <img src="" class="inst-image" />
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="footer-copy">
+                    <small>Copyright © 2021 Gayming Site. All Rights Reserved. Designed by </small>
+                    <a href="http:\\vk.com\siluwu">Silu Nurbakhtina</a>
                 </div>
             </div>
-        </footer>
-    </body>
+        </section>
+    </footer>
+</body>
 </html>
