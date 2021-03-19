@@ -7,11 +7,15 @@
     <link rel="stylesheet" type="text/css" href="css/site.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="js/site.js"></script>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="row">
+                <div class="nav-toggle"><span></span></div>
                 <div class="logo">
                     <div class="logo-image">
                         <a href="index.html">
@@ -20,30 +24,7 @@
                     </div>
                 </div>
                 <div class="head-right">
-                    <div class="head-login">
-                        <a href="#">
-                            <button class="register-switch">
-                                Sign Up
-                            </button>
-                        </a>
-                    </div>
-                    <!--ДОДЕЛАТЬ-->
-                    <div class="head-search">
-                        <button class="btn btn-search">
-                            <i class="fa fa-search"></i>
-                        </button>
-                        <div class="search">
-                            <form action="" class="search-form"></form>
-                        </div>
-                    </div>
-                    <!--ДОДЕЛАТЬ-->
-                    <div class="head-cart">
-                        <button class="btn btn-cart" type="button">
-                            <i class="fa fa-shopping-cart"></i>
-                            <p><span class="total-product">0</span></p>
-                        </button>
-                    </div>
-                    <div class="language-switcher">
+                    <div class="head-language-switcher">
                         <a href="#">
                             <img src="image/en-flag.jpg" class="en-flag">
                         </a>
@@ -51,15 +32,81 @@
                             <img src="image/ru-flag.jpg" class="ru-flag">
                         </a>
                     </div>
+                    <div class="head-login">
+                            <button class="register-switch" href="#">
+                                Sign Up
+                            </button>
+                    </div>
+                    <div class="head-cart">
+                        <button class="btn btn-cart" type="button">
+                            <i class="fa fa-shopping-cart"></i>
+                            <p><span class="total-product">0</span></p>
+                        </button>
+                    </div>
+                    <div class="head-search">
+                        <form class="search-box" method="POST">
+                            <input class="search-txt" name="" type="text" placeholder="Search ...">
+                            <a class="search-btn" href="#">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
-    <nav id="t3-mainnav" class="wrap navbar navbar-default t3-mainnav">
+    <nav id="mainnav">
         <div class="container">
-            @RenderBody()
+            <ul id="menu">
+                <li><a href="">Home</a>
+                <li><a href="">New Releases</a>
+                <li><a href="">News</a></li>
+                <li class="dropbtn">
+                    Shop
+                    <i class="fa fa-caret-down"></i>
+                    <div id="dropdown-content">
+                        <ul class="dropdown-left">
+                            <li><a href="">Action</a></li>
+                            <li><a href="">Adventure</a></li>
+                            <li><a href="">Casual</a></li>
+                            <li><a href="">Free To Play</a></li>
+                            <li><a href="">Indie</a></li>
+                            <li><a href="">Massively Multiplayer</a></li>
+                        </ul>
+                        <ul class="dropdown-right">
+                            <li><a href="">Racing</a></li>
+                            <li><a href="">RPG</a></li>
+                            <li><a href="">Simulation</a></li>
+                            <li><a href="">Sports</a></li>
+                            <li><a href="">Strategy</a></li>
+                        </ul>
+                    </div>
+            </ul>
         </div>
     </nav>
+    <div class="slider">
+        <input type="radio" name="switch" id="btn1" checked>
+        <input type="radio" name="switch" id="btn2">
+        <input type="radio" name="switch" id="btn3">
+        <input type="radio" name="switch" id="btn4">
+
+        <div class="switch">
+            <label for="btn1"></label>
+            <label for="btn2"></label>
+            <label for="btn3"></label>
+            <label for="btn4"></label>
+        </div>
+
+        <div class="slider-inner">
+            <div class="slides">
+                <img src="image/sl-1.jpg">
+                <img src="image/sl-2.jpg">
+                <img src="image/sl-3.jpg">
+                <img src="image/sl-4.jpg">
+            </div>
+        </div>
+    </div>
+    @RenderBody()
     <footer>
         <div class="container">
             <div class="row">
@@ -130,5 +177,10 @@
             </div>
         </section>
     </footer>
+    <script>
+            $('.nav-toggle').on('click', function(){
+            $('#menu').toggleClass('active');
+            });
+    </script>
 </body>
 </html>
