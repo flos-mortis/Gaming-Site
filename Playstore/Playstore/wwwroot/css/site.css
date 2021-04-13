@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    outline: none;
 }
 
 body {
@@ -9,11 +10,33 @@ body {
     font-size: 14px;
 }
 
+.wrapper {
+    background: #1b2838;
+    position: relative;
+    left: 0;
+    z-index: 99;
+    transition: transform 0.5s;
+    overflow: visible;
+}
+
 ul {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+
+h4 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-family: "Monsterrat", sans-serif;
+    font-weight: 400;
+}
+
 header {
+    position: inherit;
+    z-index: 999;
     background-color: transparent;
     padding-top: 20px;
     padding-bottom: 52px;
@@ -54,6 +77,13 @@ header {
 @media (min-width:1200px) {
     .container {
         width: 1152px
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .registration {
+        width: 400px;
+        margin: 0 auto;
     }
 }
 
@@ -359,90 +389,140 @@ p .total-product {
     max-width: 123px;
 }
 
-.slider {
-    position: relative;
-    max-width: 680px;
-    margin: 50px auto;
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
-}
-
-    .slider input[name="switch"] {
-        display: none;
-    }
-
-.switch {
+.slideshow {
     position: absolute;
-    left: 0;
-    bottom: -40px;
-    text-align: center;
+    top: 0;
     width: 100%;
+    z-index: -1;
 }
 
-    .switch label {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        cursor: pointer;
-        margin: 0 3px;
-        box-shadow: 0 0 2px 0 rgba(0, 0, 0, .8);
-        border-radius: 50%;
-        border: 5px solid #2f363c;
-        background-color: #738290;
+    .slideshow .owl-carousel {
+        cursor: move;
+        padding: 0;
+        overflow: hidden;
     }
 
-#btn1:checked ~ .switch label[for="btn1"] {
-    background-color: white;
-}
-
-#btn2:checked ~ .switch label[for="btn2"] {
-    background-color: white;
-}
-
-#btn3:checked ~ .switch label[for="btn3"] {
-    background-color: white;
-}
-
-#btn4:checked ~ .switch label[for="btn4"] {
-    background-color: white;
-}
-
-.slider-inner {
+.owl-carousel .item {
+    position: relative;
     overflow: hidden;
 }
 
-.slides {
-    display: flex;
-    width: 100%;
-    transition: all 0.5s;
-}
-
-    .slides img {
+    .owl-carousel .item .img-header-top {
+        background-size: cover;
+        background-position: top center;
+        position: absolute;
+        top: 0;
         width: 100%;
-        flex-shrink: 0;
+        height: 112px;
+        filter: blur(10px);
     }
 
-#btn1:checked ~ slider-inner slides {
-    transform: translate(0);
+    .owl-carousel .item .img-header {
+        background-size: cover;
+        background-position: top center;
+        min-height: 1070px;
+    }
+
+.slideshow + .mainbody {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 600px;
 }
 
-#btn2:checked ~ .slider-inner .slides {
-    transform: translateX(-100%);
+.wrap {
+    width: auto;
+    clear: both;
 }
 
-#btn3:checked ~ .slider-inner .slides {
-    transform: translateX(-200%);
+.t3-masthead {
+    position: relative;
 }
 
-#btn4:checked ~ .slider-inner .slides {
-    transform: translateX(-200%);
+    .t3-masthead .masthead {
+        margin: 0 auto;
+        padding: 0 16px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+.masthead::before {
+    background-color: #0000;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.3;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
 }
+
+.masthead .masthead-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../image/masthead.jpg);
+    background-size: cover;
+}
+
+.masthead .masthead-detail {
+    vertical-align: bottom;
+    text-align: left;
+    padding: 150px 0 40px;
+    color: #fff;
+    max-width: 980px;
+    position: relative;
+    z-index: 20;
+}
+
+.masthead-title {
+    color: #fff;
+    display: inline-block;
+    font-size: 42px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.masthead + .mainbody {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.content {
+    padding-top: 58.57142858px;
+    margin-bottom: 58.57142858px;
+}
+
+.registration {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+    .registration legend {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: inherit;
+        display: inline-block;
+        font-size: 13px;
+        line-height: 1;
+        padding: 20px 32px;
+        position: relative;
+    }
 
 footer {
-    padding-top: 80px;
     background: #131c27;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #7a828b;
 }
+
+    footer::before, footer::after {
+        content: '';
+        display: table;
+    }
+
+    footer > .container {
+        padding-bottom: 0;
+        padding-top: 80px;
+    }
 
 .footer-col {
     padding-right: 16px;
@@ -559,13 +639,6 @@ footer {
     color: #ffffff;
 }
 
-h4 {
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-family: "Monsterrat", sans-serif;
-    font-weight: 400;
-}
-
 .module-content p {
     color: #ffffff;
     opacity: 0.5;
@@ -584,9 +657,13 @@ p {
     width: 66%;
 }
 
-a {
-    text-decoration: none;
-}
+    .footer-copy a {
+        color: #67c1f5;
+    }
+
+        .footer-copy a:hover {
+            color: #1fa4f0;
+        }
 
 footer small {
     font-size: 100%;
