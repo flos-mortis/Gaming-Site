@@ -402,6 +402,10 @@ p .total-product {
     background-color: white;
 }
 
+#btn4:checked ~ .switch label[for="btn4"] {
+    background-color: white;
+}
+
 .slider-inner {
     overflow: hidden;
 }
@@ -426,6 +430,10 @@ p .total-product {
 }
 
 #btn3:checked ~ .slider-inner .slides {
+    transform: translateX(-200%);
+}
+
+#btn4:checked ~ .slider-inner .slides {
     transform: translateX(-200%);
 }
 

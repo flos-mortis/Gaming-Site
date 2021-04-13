@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Playstore</title>
-    <link rel="stylesheet" type="text/css" href="css/site.css">
+    <link rel="stylesheet" type="text/css" href="../css/site.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
@@ -19,23 +19,23 @@
                 <div class="logo">
                     <div class="logo-image">
                         <a href="index.html">
-                            <img class="logo-img" src="image/logo.png">
+                            <img class="logo-img" src="../image/logo.png">
                         </a>
                     </div>
                 </div>
                 <div class="head-right">
                     <div class="head-language-switcher">
                         <a href="#">
-                            <img src="image/en-flag.jpg" class="en-flag">
+                            <img src="../image/en-flag.jpg" class="en-flag">
                         </a>
                         <a href="#">
-                            <img src="image/ru-flag.jpg" class="ru-flag">
+                            <img src="../image/ru-flag.jpg" class="ru-flag">
                         </a>
                     </div>
                     <div class="head-login">
-                            <button class="register-switch" href="#">
-                                Sign Up
-                            </button>
+                        <a asp-controller="Home" asp-action="SignUp">
+                            <input class="register-switch" type="button" value="signup" />
+                        </a>
                     </div>
                     <div class="head-cart">
                         <button class="btn btn-cart" type="button">
@@ -99,10 +99,10 @@
 
         <div class="slider-inner">
             <div class="slides">
-                <img src="image/sl-1.jpg">
-                <img src="image/sl-2.jpg">
-                <img src="image/sl-3.jpg">
-                <img src="image/sl-4.jpg">
+                <img src="../image/sl-1.jpg">
+                <img src="../image/sl-2.jpg">
+                <img src="../image/sl-3.jpg">
+                <img src="../image/sl-4.jpg">
             </div>
         </div>
     </div>
