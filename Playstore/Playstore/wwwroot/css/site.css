@@ -145,7 +145,7 @@ img {
     position: relative;
 }
 
-.head-login {
+.head-login, .head-reg {
     float: right;
     margin-left: 10px;
 }
@@ -214,6 +214,16 @@ img {
         border: none;
     }
 
+.head-cart .btn .fa{
+    font-size: 12px;
+    position: relative;
+    top: -5px;
+    right: 2px;
+}
+.head-search .fa {
+    font-size: 12px;
+    position: relative;
+}
 .total-product {
     position: absolute;
     padding: 4px 5px;
@@ -259,6 +269,7 @@ p .total-product {
     margin-top: -32px;
     min-height: 64px;
     margin-bottom: 0px;
+    z-index: 1000;
     overflow: hidden;
 }
 
