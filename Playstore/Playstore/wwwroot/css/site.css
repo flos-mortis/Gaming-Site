@@ -34,6 +34,11 @@ h4 {
     font-weight: 400;
 }
 
+input[type="checkbox"] {
+    position: absolute;
+    margin-left: -20px;
+}
+
 header {
     position: inherit;
     z-index: 999;
@@ -56,9 +61,40 @@ header {
         clear: both;
     }
 
+.btn-primary {
+    background-color: #67c1f5;
+    border-color: #4fb7f3;
+    color: #ffffff;
+    background: linear-gradient(#67c1f5, #4fb7f3);
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.2) inset;
+}
+
+input[type="text"]:not(.search-txt), input[type="password"], input[type="email"], select {
+    width: 50%;
+    display: block;
+    padding: 6px 12px;
+    color: #f7f7f7;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+option {
+    color: #1b2838;
+    font-size: 13px;
+}
+
 @media (min-width:768px) {
     .container {
         width: 752px
+    }
+
+    .col-sm-6 {
+        width: 50%;
+    }
+
+    .col-sm-6 {
+        float: left;
     }
 }
 
@@ -87,6 +123,24 @@ header {
     }
 }
 
+@media screen and (min-width: 480px) {
+    .login-wrap {
+        width: 480px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .logo {
+        text-align: left;
+        margin-bottom: 0;
+    }
+
+    .registration .form-actions .btn {
+        margin-right: 10px;
+    }
+}
+
 .row {
     margin-right: -16px;
     margin-left: -16px;
@@ -98,13 +152,6 @@ header {
         display: table;
         content: " ";
     }
-
-@media screen and (min-width: 768px) {
-    .logo {
-        text-align: left;
-        margin-bottom: 0;
-    }
-}
 
 .logo {
     position: relative;
@@ -121,6 +168,27 @@ header {
 
 img {
     vertical-align: middle;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 2px;
+    font-weight: 700;
+}
+
+.btn-default {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    color: #333333;
+    background: linear-gradient(#ffffff, #f2f2f2);
 }
 
 .head-right {
@@ -140,10 +208,20 @@ img {
     margin-left: 10px;
 }
 
+    .head-cart .btn {
+        width: 32px;
+        height: 32px;
+    }
+
 .head-search {
     float: right;
     position: relative;
 }
+
+    .head-search .btn {
+        width: 32px;
+        height: 32px;
+    }
 
 .head-login, .head-reg {
     float: right;
@@ -189,14 +267,12 @@ img {
     background: rgba(255, 255, 255, 0.3);
 }
 
-.btn {
+.head-right .btn {
     background: rgba(255, 255, 255, 0.1);
     border: 0;
     padding: 0;
     display: inline-block !important;
     text-align: center;
-    width: 32px;
-    height: 32px;
     line-height: 32px;
     position: relative;
     cursor: pointer;
@@ -204,26 +280,16 @@ img {
     transition: 0.3s;
 }
 
-    .btn:hover {
+    .head-right .btn:hover {
         background: rgba(255, 255, 255, 0.3);
         color: #ffffff;
         border: none;
     }
 
-    .btn:focus {
+    .head-right .btn:focus {
         border: none;
     }
 
-.head-cart .btn .fa{
-    font-size: 12px;
-    position: relative;
-    top: -5px;
-    right: 2px;
-}
-.head-search .fa {
-    font-size: 12px;
-    position: relative;
-}
 .total-product {
     position: absolute;
     padding: 4px 5px;
@@ -269,7 +335,6 @@ p .total-product {
     margin-top: -32px;
     min-height: 64px;
     margin-bottom: 0px;
-    z-index: 1000;
     overflow: hidden;
 }
 
@@ -413,6 +478,34 @@ p .total-product {
         overflow: hidden;
     }
 
+.acm-slideshow .owl-carousel .owl-wrapper-outer {
+    z-index: 0;
+}
+
+.owl-carousel .owl-wrapper-outer {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.owl-carousel .owl-wrapper {
+    position: relative;
+}
+
+    .owl-carousel .owl-wrapper::after {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+
+.owl-carousel .owl-item {
+    float: left;
+    width: 983px;
+}
+
 .owl-carousel .item {
     position: relative;
     overflow: hidden;
@@ -433,6 +526,24 @@ p .total-product {
         background-position: top center;
         min-height: 1070px;
     }
+
+.img-header-bottom {
+    background-position: bottom center;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    filter: blur(10px);
+}
+
+.img-header-bottom-mask {
+    background: linear-gradient(transparent, #1b2838);
+    bottom: 0;
+    height: 300px;
+    width: 100%;
+    position: absolute;
+}
 
 .slideshow + .mainbody {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -511,13 +622,86 @@ p .total-product {
 
     .registration legend {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        color: inherit;
+        color: white;
         display: inline-block;
         font-size: 13px;
         line-height: 1;
         padding: 20px 32px;
         position: relative;
     }
+
+    .registration .control-group {
+        padding: 0 32px;
+    }
+
+legend + .control-group {
+    margin-top: 20px;
+}
+
+.control-group {
+    margin-bottom: 10px;
+}
+
+.control-label {
+    color: #fff;
+}
+
+.red {
+    color: #ffcc00;
+}
+
+.registration .form-actions {
+    background: none;
+    padding: 32px;
+    margin: 0;
+}
+
+.login-wrap .page-header {
+    border: 1px solid rgba(255, 0, 0, 0.1);
+    border-bottom: 0;
+    font-size: 13px;
+    margin: 0;
+    padding: 20px 32px;
+}
+
+.page-header h1 {
+    color: #ffffff;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.login-wrap .login {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 32px;
+}
+
+.login-wrap .form-group + .form-group {
+    margin-top: 20px;
+}
+
+.login-wrap .form-group .checkbox {
+    padding: 0;
+    min-height: auto;
+}
+
+    .login-wrap .form-group .checkbox label {
+        display: inline-block;
+        color: rgba(255, 255, 255, 0.5);
+        font-weight: 500;
+        font-size: 12px;
+        min-height: 20px;
+        cursor: pointer;
+    }
+
+    .login-wrap .form-group .checkbox input {
+        margin-top: 1px;
+    }
+
+.login-wrap .form-group .btn-wrap {
+    text-align: right;
+}
 
 footer {
     background: #131c27;

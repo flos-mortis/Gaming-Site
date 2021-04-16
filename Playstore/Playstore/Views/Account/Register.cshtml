@@ -3,18 +3,6 @@
     ViewData["Title"] = "Sign Up";
     Layout = "_Layout";
 }
-<div class="wrap t3-masthead">
-    <div class="masthead">
-        <div class="masthead-bg">
-            <div class="container">
-                <div class="masthead-detail">
-                    <h3 class="masthead-title">Gaym</h3>
-                    <div class="masthead-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="mainbody">
     <div class="container">
         <div class="row">
@@ -23,10 +11,81 @@
                     <form id="member-registration" class="form-validate form-vertical">
                         <fieldset>
                             <legend>User Registration</legend>
-
+                            <div class="control-group">
+                                <div class="control-label">
+                                    <strong class="red">*</strong>
+                                    Required field
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    Username
+                                    <strong class="red">*</strong>
+                                </div>
+                                <div class="controls">
+                                    <input type="text" required>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    Email
+                                    <strong class="red">*</strong>
+                                </div>
+                                <div class="controls">
+                                    <input type="email" required>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    Gender
+                                    <strong class="red">*</strong>
+                                </div>
+                                <div class="controls">
+                                    <select required>
+                                        <option>CisPerson</option>
+                                        <option>TransPerson</option>
+                                        <option>NonBinaryPerson</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    Country
+                                </div>
+                                <div class="controls">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    City
+                                </div>
+                                <div class="controls">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    Password
+                                    <strong class="red">*</strong>
+                                </div>
+                                <div class="controls">
+                                    <input type="password" required>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    Repeat Password
+                                    <strong class="red">*</strong>
+                                </div>
+                                <div class="controls">
+                                    <input type="password" required>
+                                </div>
+                            </div>
                         </fieldset>
-                        <div class="form-group">
-
+                        <div class="form-group form-actions">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                            <a class="btn btn-default cancel" href="#">Cancel</a>
                         </div>
                     </form>
                 </div>
