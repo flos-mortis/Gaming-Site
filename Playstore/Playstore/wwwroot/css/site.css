@@ -26,6 +26,9 @@ ul {
 a {
     text-decoration: none;
 }
+a:hover{
+    text-decoration: none;
+}
 
 h4 {
     margin-bottom: 10px;
@@ -161,9 +164,6 @@ option {
         width: 400px;
         margin: 0 auto;
     }
-}
-
-@media screen and (min-width: 480px) {
     .login-wrap {
         width: 480px;
         margin: 0 auto;
@@ -178,6 +178,12 @@ option {
 
     .registration .form-actions .btn {
         margin-right: 10px;
+    }
+    .module-title{
+        margin-bottom: 20px;
+    }
+    .module + .module{
+        margin-top: 40px;
     }
 }
 
@@ -685,7 +691,7 @@ p .total-product {
             .vm-product-descr-container .platforms-field span i{
                 margin-right: 5px;
             }
-    .vm-product-descr-container p{
+    .product-desc{
         color: #ffffff;
         height: auto;
         margin-bottom: 20px;
@@ -752,21 +758,92 @@ p .total-product {
                     box-shadow: none;
                     color: #ffffff;
                 }
+                .spacer .vm-product-descr-container > h2 a:hover {
+                    color: #1fa4f0;
+                }
 .horizontal-separator{
     height: 32px;
     margin: 0;
 }
 .sidebar-left {
     border-right: 1px solid rgba(255,255,255,0.1);
-    padding-right: 32px;
-    float: left;
+    padding-right: 32px!important;
+}
+.module{
+    background: transparent;
+    color: inherit;
+}
+.module-title {
+    background: transparent;
+    color: #ffffff;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin: 0 0 10px 0;
+    padding: 20px 32px 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    text-transform: uppercase;
+}
+.module-title span{
+    position: relative;
+    display: inline-block;
+}
+    .sidebar-left .module-title span:before {
+        content: "";
+        border-top: 1px solid #67c1f5;
+        box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+        width: 100%;
+        height: 0;
+        position: absolute;
+        top: -21px;
+        left: 0;
+    }
+.module-ct ul li + li{
+    padding-top: 10px;
+}
+.module-ct ul li a{
+    color: #ffffff;
+}
+    .module-ct ul li a:hover {
+        color: #1fa4f0;
+    }
+.sidebar .module + .module .module-title {
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+.hotgame-module .module-title{
+    margin-bottom: 0px;
+}
+.hotgame-module .module-ct {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-top: 0;
+    padding: 20px;
+}
+.feat-prod-img{
+    margin: -20px -20px 20px;
+    display: block;
+}
+.hot-game-img{
+    max-width: 100%;
+}
+.hot-game-link{
+    margin-top: 20px;
+}
+.hot-game-title {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-family: "Montserrat",sans-serif;
+    text-align: left;
+    color: #ffffff;
+    display: block;
+}
+.hot-game-title:hover{
+    color: #ffffff;
 }
 
     /*конец главной страницы*/
     .wrap {
-        width: auto;
-        clear: both;
-    }                        
+    width: auto;
+    clear: both;
+}                            
 .t3-masthead {
     position: relative;
 }
@@ -824,7 +901,6 @@ p .total-product {
 }
 
 .content {
-    padding-top: 58.57142858px;
     margin-bottom: 58.57142858px;
 }
 
@@ -915,6 +991,8 @@ legend + .control-group {
     text-align: right;
 }
 
+/* конец страницы логина */
+
 footer {
     background: #131c27;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -937,7 +1015,7 @@ footer {
 }
 
 .footer-col-left {
-    width: 50%;
+    width: 75%;
 }
 
 .footer-col-inner {
@@ -983,20 +1061,18 @@ footer {
     margin-bottom: 20px;
 }
 
-.module-title {
+footer .col-module .module-title {
     color: #ffffff;
     font-size: 12px;
     margin-bottom: 10px;
     text-transform: uppercase;
-    font-family: "Monsterrat", sans-serif;
-    letter-spacing: 0.9px;
-    font-weight: 200;
+    padding: 0;
+    border-bottom: 0;
 }
 
 .footer-right .module-title {
-    margin-bottom: 20px;
-    padding: 20px 30px 20px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 20px;
+    color: #ffffff;
 }
 
 .footer-right .module-content {
