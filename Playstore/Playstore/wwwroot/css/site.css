@@ -45,13 +45,13 @@ input[type="checkbox"] {
 }
 
 header {
-    position: inherit;
-    z-index: 999;
-    background-color: transparent;
     padding-top: 20px;
     padding-bottom: 52px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    width: 100%;
+    background-color: #67c1f5;
+}
+.homepage header{
+    background-color: transparent;
 }
 
 .container {
@@ -119,7 +119,7 @@ option {
         width: 752px
     }
 
-    .col-sm-6, .col-sm-8 {
+    .col-sm-6, .col-sm-8, .col-sm-4 {
         float: left;
     }
 
@@ -141,6 +141,10 @@ option {
     .nav-toggle {
         display: block;
     }
+    .owl-carousel .item .slider-content {
+        margin-left: -376px;
+        left: 50%;
+    }
 }
 
 @media (min-width:992px) {
@@ -156,6 +160,10 @@ option {
 @media (min-width:1200px) {
     .container {
         width: 1152px
+    }
+    .owl-carousel .item .slider-content {
+        margin-left: -576px;
+        left: 50%;
     }
 }
 
@@ -515,11 +523,10 @@ p .total-product {
         line-height: 0;
         height: 0;
     }
+    .owl-carousel .item .slider-thumb{
+        width: auto;
+    }
 
-.owl-carousel .owl-item {
-    float: left;
-    width: 983px;
-}
 .owl-carousel .item {
     position: relative;
     overflow: hidden;
@@ -541,7 +548,7 @@ p .total-product {
         min-height: 1070px;
     }
 
-    .owl-carousel .item .slider-content{
+    .owl-carousel .item .slider-content {
         color: #ffffff;
         text-align: left;
         position: absolute;
@@ -549,6 +556,8 @@ p .total-product {
         bottom: 400px;
         padding: 0 16px;
         height: auto;
+        display: block;
+        transition: margin-left 350ms;
     }
 
 .owl-carousel .owl-controls{
@@ -1073,6 +1082,7 @@ footer .col-module .module-title {
 .footer-right .module-title {
     padding-left: 20px;
     color: #ffffff;
+    margin-bottom: 20px;
 }
 
 .footer-right .module-content {
