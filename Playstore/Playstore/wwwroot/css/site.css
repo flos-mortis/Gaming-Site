@@ -8,6 +8,7 @@
 body {
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-size: 14px;
+    color: #ffffff;
 }
 
 .wrapper {
@@ -364,10 +365,20 @@ p .total-product {
     margin-bottom: 0px;
     overflow: hidden;
 }
+    #mainnav .navbar {
+        box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1);
+    }
+.navbar {
+    background-color: #131c27;
+    border-radius: 2px;
+    text-align: center;
+    padding: 0;
+}
 
 #menu {
     text-align: center;
     background-color: rgb(19, 28, 39);
+    margin-bottom: 0;
 }
 
     #menu > li:first-child {
@@ -405,8 +416,15 @@ p .total-product {
             display: block;
             line-height: 20px;
         }
+        #mainnav > .dropdown > .dropdown-toggle .caret{
+            display: inline-block;
+        }
+        #mainnav > .dropdown > a .caret {
+            border-top-color: #ffffff;
+            border-bottom-color: #ffffff;
+        }
 
-#dropdown-content {
+    #dropdown-content {
     position: absolute;
     z-index: 1;
     min-width: 0;
@@ -848,24 +866,26 @@ p .total-product {
     color: #ffffff;
 }
 
-    /*конец главной страницы*/
-    .wrap {
-    width: auto;
-    clear: both;
-}                            
-.t3-masthead {
+/*конец главной страницы*/
+
+/*страница новые релизы*/
+
+.wrap {
+width: auto;
+clear: both;
+}                           
+
+.masthead {
     position: relative;
+    height: 280px;
 }
 
-    .t3-masthead .masthead {
+    .masthead .ja-masthead {
         margin: 0 auto;
         padding: 0 16px;
-        background-repeat: no-repeat;
-        background-size: cover;
     }
-
-.masthead::before {
-    background-color: #0000;
+.ja-masthead:before {
+    background-color: #000;
     content: "";
     display: block;
     position: absolute;
@@ -875,34 +895,44 @@ p .total-product {
     height: 100%;
     width: 100%;
     z-index: 3;
+    height: 280px;
+}
+.ja-masthead {
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
-.masthead .masthead-bg {
+.masthead .ja-masthead #masthead-bg {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(../image/masthead.jpg);
     background-size: cover;
+    height: 280px;
 }
-
-.masthead .masthead-detail {
+.masthead .ja-masthead .masthead-detail {
     vertical-align: bottom;
     text-align: left;
-    padding: 150px 0 40px;
     color: #fff;
+    padding: 40px 0;
     max-width: 980px;
     position: relative;
     z-index: 20;
+    padding: 150px 0 40px;
 }
-
-.masthead-title {
-    color: #fff;
+.masthead .ja-masthead .masthead-title {
+    color: #ffffff;
     display: inline-block;
     font-size: 42px;
+    font-weight: 900;
     text-transform: uppercase;
+    font-family: "Montserrat",sans-serif;
     margin: 0;
+}
+.masthead .ja-masthead .masthead-desc {
+    margin-top: 10px;
 }
 
 .masthead + .mainbody {
@@ -912,6 +942,92 @@ p .total-product {
 .content {
     margin-bottom: 58.57142858px;
 }
+.item-leading .leading {
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.25);
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.25) inset;
+    position: relative;
+    transition: box-shadow 350ms;
+    margin-bottom: 40px;
+    padding: 32px;
+}
+.item-leading .leading:hover {
+    box-shadow: 0 0 4px #4d729f;
+}
+.item-leading .leading:before {
+    background: rgba(255,255,255,0.05);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.5;
+}
+    .item-leading .leading .item-image {
+        margin: -32px -32px 20px;
+        float: none !important;
+    }
+        .item-leading .leading .item-image img {
+            max-width: 100%;
+        }
+
+.article-title {
+    margin: 0 0 10px 0;
+    color: #ffffff;
+    font-size: 16px;
+}
+    .article-title a{
+        color: #ffffff;
+        font-size: 20px;
+    }
+
+.article-aside {
+    color: #999999;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+    .article-aside .fa {
+        color: #999999;
+    }
+
+.article-info{
+    margin: 0;
+}
+    .article-info dd {
+        display: inline-block;
+        margin-left: 0;
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+
+.article-intro{
+    opacity: 0.5;
+}
+
+.readmore {
+    margin-top: 20px;
+}
+
+.pagination > li + li a {
+    margin-left: 10px;
+}
+.pagination > li > a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+.pagination li a {
+    border-radius: 2px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    border: 0;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 6px 12px;
+    background-color: rgba(255,255,255,0.1);
+}
+
+/*регистрация*/
 
 .registration {
     border: 1px solid rgba(255, 255, 255, 0.1);
