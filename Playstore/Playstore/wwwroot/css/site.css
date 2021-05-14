@@ -42,7 +42,6 @@ p {
 }
 input[type="checkbox"] {
     position: absolute;
-    margin-left: -20px;
 }
 
 header {
@@ -67,6 +66,9 @@ header {
         clear: both;
     }
 
+.col-xs-12{
+    width: 100%;
+}
 img {
     vertical-align: middle;
 }
@@ -125,7 +127,7 @@ option {
     }
 
     .col-sm-6 {
-        width: 50%;]
+        width: 50%;
     }
 
     .col-sm-8 {
@@ -359,7 +361,7 @@ p .total-product {
 }
 
 #mainnav {
-    background-color: transparent;
+    background-color: #131c27;
     margin-top: -32px;
     min-height: 64px;
     margin-bottom: 0px;
@@ -637,7 +639,7 @@ p .total-product {
 
 /*главная страница блок*/
 
-.slideshow + .mainbody {
+.slideshow + #mainbody {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 600px;
 }
@@ -681,10 +683,21 @@ p .total-product {
         .featured-view .spacer:hover{
             box-shadow: 0 0 4px #4d729f;
         }
-        .featured-view .vm-product-media-container{
-            margin: -20px -20px 20px;
-            max-width: none;
-        }
+            .featured-view .spacer:before {
+                background: rgba(255,255,255,0.05);
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                z-index: -1;
+                opacity: 0.5;
+            }
+            .featured-view .vm-product-media-container {
+                margin: -20px -20px 20px;
+                max-width: none;
+            }
         .featured-view .spacer .browseProductImage{
             max-height: none;
             max-width: 100%;
@@ -942,6 +955,7 @@ clear: both;
 .content {
     margin-bottom: 58.57142858px;
 }
+
 .item-leading .leading {
     background: transparent;
     border: 1px solid rgba(0,0,0,0.25);
@@ -1055,10 +1069,13 @@ legend + .control-group {
     margin-bottom: 10px;
 }
 
-.control-label {
-    color: #fff;
+.login-wrap form .form-group .control-label label {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 13px;
+    opacity: 0.5;
 }
-
+    
 .red {
     color: #ffcc00;
 }
@@ -1070,7 +1087,7 @@ legend + .control-group {
 }
 
 .login-wrap .page-header {
-    border: 1px solid rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 0;
     font-size: 13px;
     margin: 0;
@@ -1085,36 +1102,60 @@ legend + .control-group {
     text-transform: uppercase;
 }
 
+    .page-header h1 span::before {
+        content: "";
+        border-top: 1px solid #67c1f5;
+        box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+        width: 100%;
+        height: 0;
+        position: absolute;
+        left: 0;
+        top: -21px;
+    }
+
 .login-wrap .login {
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 32px;
 }
 
+.form-horizontal .form-group{
+    overflow: auto;
+}
 .login-wrap .form-group + .form-group {
     margin-top: 20px;
 }
 
-.login-wrap .form-group .checkbox {
+.login-wrap form .form-group .checkbox {
     padding: 0;
     min-height: auto;
+    position: relative;
+    display: block;
 }
 
-    .login-wrap .form-group .checkbox label {
+    .login-wrap form .form-group .checkbox label {
         display: inline-block;
         color: rgba(255, 255, 255, 0.5);
         font-weight: 500;
         font-size: 12px;
         min-height: 20px;
         cursor: pointer;
+        padding-left: 20px;
     }
 
-    .login-wrap .form-group .checkbox input {
+    .login-wrap form .form-group .checkbox input {
         margin-top: 1px;
+        position: absolute;
+        margin-left: -20px;
     }
 
-.login-wrap .form-group .btn-wrap {
-    text-align: right;
-}
+    .login-wrap .form-group .btn-wrap {
+        text-align: right;
+    }
+    .login-wrap .other-links a{
+        color: #ffffff;
+        opacity: 0.5;
+        font-size: 12px;
+    }
 
 /* конец страницы логина */
 
