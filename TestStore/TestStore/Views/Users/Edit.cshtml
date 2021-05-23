@@ -1,0 +1,34 @@
+﻿@model TestStore.ViewModels.EditUserViewModel
+@using Microsoft.AspNetCore.Identity
+@{
+    ViewBag.Title = "Редактирование пользователя";
+}
+<form asp-action="Edit" asp-controller="Users">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <input type="hidden" asp-for="Id" />
+    </div>
+    <div class="form-group">
+        <label asp-for="UserName" class="control-label">Имя пользователя</label>
+        <input type="text" asp-for="UserName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label">Email</label>
+        <input type="text" asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Year" class="control-label">Год рождения</label>
+        <input type="number" asp-for="Year" class="form-control" />
+    </div>
+    <h2>Изменение ролей для пользователя @Model.UserName</h2>
+
+    <input type="hidden" name="userId" value="@Model.Id" />
+    <div class="form-group">
+        @foreach (IdentityRole role in Model.AllRoles)
+        {
+            <input type="checkbox" name="roles" value="@role.Name"
+                   @(Model.UserRoles.Contains(role.Name) ? "checked=\"checked\"" : "") />@role.Name <br />
+            }
+    </div>
+    <input type="submit" value="Сохранить" class="btn btn-outline-secondary" />
+</form>
