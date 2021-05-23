@@ -12,5 +12,9 @@ namespace Playstore.Controllers
         {
             return View();
         }
+        public IActionResult Game_Profile()
+        {
+            return View();
+        }
     }
 }

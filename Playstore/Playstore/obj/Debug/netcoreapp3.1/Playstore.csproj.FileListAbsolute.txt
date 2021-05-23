@@ -179,3 +179,4 @@ C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\obj\Debug\netcoreapp
 C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\obj\Debug\netcoreapp3.1\Playstore.pdb
 C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\obj\Debug\netcoreapp3.1\Playstore.genruntimeconfig.cache
 C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout_homepage.cshtml.g.cs
+C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\obj\Debug\netcoreapp3.1\Razor\Views\Shop\game_profile.cshtml.g.cs

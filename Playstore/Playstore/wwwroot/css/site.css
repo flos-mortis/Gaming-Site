@@ -1,4 +1,4 @@
-*, *:after, *:before {
+﻿*, *:after, *:before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -637,7 +637,7 @@ p .total-product {
     position: absolute;
 }
 
-/*������� �������� ����*/
+/*главная страница блок*/
 
 .slideshow + #mainbody {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -716,19 +716,19 @@ p .total-product {
         .vm-product-descr-container h2 a{
             color: #ffffff;
         }
-    .vm-product-descr-container .platforms-field{
+    .platforms-field{
         color: #ffffff;
         opacity: 0.5;
         margin-bottom: 10px;
         padding: 0;
         text-align: left;
     }
-        .vm-product-descr-container .platforms-field span{
+        .platforms-field span{
             margin-left: 5px;
             font-size: 13px;
             color: #666;
         }
-            .vm-product-descr-container .platforms-field span i{
+            .platforms-field span i{
                 margin-right: 5px;
             }
     .product-desc{
@@ -739,45 +739,45 @@ p .total-product {
         min-height: 62px;
         opacity: 0.5;
     }
-    .spacer .product-price-block{
+    .product-price-block{
         margin-bottom: 20px;
         margin-top: 10px;
         text-align: left;
         min-height: 42px;
     }
-        .spacer .product-price-block .price-block {
+        .product-price-block .price-block {
             margin-bottom: 6.66666667px;
             display: block;
         }
-        .spacer .product-price-block .price-block .price-desc{
+        .product-price-block .price-block .price-desc{
             text-align: left;
             min-width: 16px;
             margin: 0 12px 3px 0;
         }
-        .spacer .product-price-block .price-block span{
+        .product-price-block .price-block span{
             font-size: 14px;
             font-weight: 600;
             color: #ffffff;
         }
-        .spacer .product-price-block .base-price .base-price-val{
+        .product-price-block .base-price .base-price-val{
             color: #ffffff;
             text-decoration: line-through;
             opacity: 0.5;
         }
-        .spacer .product-price-block .sale-price .sale-price-val{
+        .product-price-block .sale-price .sale-price-val{
             color: #669900;
         }
-        .spacer .addtocart-bar{
+        .addtocart-bar{
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 20px;
             margin: 0 0 4px;
             line-height: 14px;
         }
-            .spacer .addtocart-bar span {
+            .addtocart-bar span {
                 font-size: 13px;
                 color: #666;
             }
-            .spacer .addtocart-bar .addtocart-button input {
+            .addtocart-bar .addtocart-button input {
                 border-radius: 3px;
                 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
                 font-size: 14px;
@@ -792,7 +792,7 @@ p .total-product {
                 cursor: pointer;
                 line-height: 20px;
             }
-                .spacer .addtocart-bar .addtocart-button input:hover {
+                .addtocart-bar .addtocart-button input:hover {
                     background: linear-gradient(#67c1f5,#7fcbf7);
                     border: 1px solid #67c1f5;
                     box-shadow: none;
@@ -879,9 +879,9 @@ p .total-product {
     color: #ffffff;
 }
 
-/*����� ������� ��������*/
+/*конец главной страницы*/
 
-/*�������� ����� ������*/
+/*страница новые релизы*/
 
 .wrap {
 width: auto;
@@ -1041,7 +1041,7 @@ clear: both;
     background-color: rgba(255,255,255,0.1);
 }
 
-/*�����������*/
+/*регистрация*/
 
 .registration {
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1157,13 +1157,163 @@ legend + .control-group {
         font-size: 12px;
     }
 
-/* ����� �������� ������ */
+/* конец страницы логина */
 
-footer {
-    background: #131c27;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: #7a828b;
+/* страницца пользователя */
+
+.profile .sidebar-left{
+    border-right: none;
 }
+.avatar-module img{
+    max-width: 100%;
+}
+.avatar-module button{
+    margin-top: 15px;
+}
+.user-info{
+    float: left;
+}
+.user-info .username{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.user-info h1{
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.fav-game{
+    float: right;
+    width: 30%;
+}
+
+/* конец страницы пользователя */
+
+/* профиль игры */
+
+.product-container .product-media-container {
+    float: left;
+    width: 50%;
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+    .product-container .product-media-container img{
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+    .product-container .product-details-container {
+        box-sizing: border-box;
+        padding-left: 20px;
+        float: right;
+        width: 45%;
+    }
+    .product-container .product-details-container h1{
+        font-size: 24px;
+        margin-top: 0;
+    }
+        .product-container .product-details-container .product-price-block {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 0;
+            float: none;
+            padding-top: 20px;
+            padding-bottom: 0;
+            text-align: left;
+            line-height: 18px;
+        }
+
+.rating-mini {
+    display: inline-block;
+    font-size: 0;
+}
+    .rating-mini span {
+        padding: 0;
+        font-size: 14px;
+        line-height: 1;
+        color: lightgrey;
+    }
+
+    .rating-mini > span:before {
+        content: '★';
+    }
+
+    .rating-mini > span.active {
+        color: gold;
+    }
+
+.product-details-container .product-short-desc {
+    line-height: 1.8;
+    margin: 0 0 16px;
+}    
+
+.product-fields-title-wrapper {
+    min-width: 160px;
+    font-weight: bold;
+    padding: 8px 0;
+}
+
+.productdetails-tabs {
+    margin-top: 32px;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-left: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 32px;
+}
+
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+        background-color: transparent;
+        border-color: #67c1f5 rgba(255,255,255,0.1) transparent transparent;
+    }
+
+    .nav-tabs > li > a {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        border-right: 1px solid rgba(255,255,255,0.1);
+        border-radius: 0;
+        color: inherit;
+        font-size: 13px;
+        font-weight: 400;
+        font-family: "Montserrat",sans-serif;
+        letter-spacing: 0.5px;
+        margin: 0;
+        padding: 20px 32px;
+        text-transform: uppercase;
+    }
+
+.customer-reviews {
+    margin: 25px 0 0;
+}
+
+.list-reviews{
+    margin-top: 20px;
+}
+
+.productdetails-tabs .customer-reviews .list-reviews .normal {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 0;
+}
+
+.productdetails-tabs .customer-reviews .list-reviews span.date {
+    border: 0;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    color: #ffffff;
+    padding: 0 0 0 10px;
+    right: auto;
+    top: auto;
+    float: right;
+}
+
+
+
+        /* конец профиля игры */
+        /*-----------------------------------
+        футер начало
+    ----------------------------------------*/
+        footer {
+        background: #131c27;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #7a828b;
+    }
 
     footer::before, footer::after {
         content: '';
@@ -1314,3 +1464,7 @@ footer .col-module .module-title {
 footer small {
     font-size: 100%;
 }
+
+/*-----------------------------------
+        футер конец
+----------------------------------------*/
