@@ -18,11 +18,7 @@ namespace TestStore
             if (await roleManager.FindByNameAsync("admin") == null)
             {
                 await roleManager.CreateAsync(new IdentityRole("admin"));
-            }
-            if (await roleManager.FindByNameAsync("user") == null)
-            {
-                await roleManager.CreateAsync(new IdentityRole("user"));
-            }
+            }           
             if (await roleManager.FindByNameAsync("moderator") == null)
             {
                 await roleManager.CreateAsync(new IdentityRole("moderator"));
