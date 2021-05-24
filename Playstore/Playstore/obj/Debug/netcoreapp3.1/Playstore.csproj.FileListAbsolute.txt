@@ -1,6 +1,5 @@
 C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\bin\Debug\netcoreapp3.1\Playstore.exe
 C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\bin\Debug\netcoreapp3.1\Playstore.deps.json
 C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\bin\Debug\netcoreapp3.1\Playstore.runtimeconfig.json
@@ -180,3 +179,4 @@ C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\obj\Debug\netcoreapp
 C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\obj\Debug\netcoreapp3.1\Playstore.genruntimeconfig.cache
 C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout_homepage.cshtml.g.cs
 C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\obj\Debug\netcoreapp3.1\Razor\Views\Shop\game_profile.cshtml.g.cs
+C:\Users\1\Documents\GitHub\Gaming-Site\Playstore\Playstore\obj\Debug\netcoreapp3.1\scopedcss\bundle\Playstore.styles.css

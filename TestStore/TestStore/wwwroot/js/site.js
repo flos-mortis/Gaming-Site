@@ -1,4 +1,18 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+(function ($) {
+    jQuery(document).ready(function ($) {
+        $(".owl-carousel").owlCarousel({
+            items: 1,
+            singleItem: true,
+            itemsScaleUp: true,
+            navigation: true,
+            navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+            pagination: true,
+            merge: false,
+            mergeFit: true,
+            slideBy: 1,
+            autoPlay: false
+        });
+    });
+})(jQuery);
 
-// Write your JavaScript code.

@@ -1,24 +1,84 @@
 ﻿@model TestStore.ViewModels.LoginViewModel
-
-    <h2>Вход в приложение</h2>
-    <form method="post" asp-controller="Account" asp-action="Login"
-          asp-route-returnUrl="@Model.ReturnUrl">
-        <div asp-validation-summary="ModelOnly"></div>
-        <div>
-            <label asp-for="UserName"></label><br />
-            <input asp-for="UserName" />
-            <span asp-validation-for="UserName"></span>
+@{
+    ViewData["Title"] = "Sign Up";
+    Layout = "_Layout";
+}
+<div class="wrap masthead">
+    <div class="ja-masthead">
+        <div id="masthead-bg" style="background-image: url(../image/masthead.jpg)">
+            <div class="container">
+                <div class="masthead-detail">
+                    <h3 class="masthead-title">
+                        new releases
+                    </h3>
+                    <div class="masthead-desc">
+                        kjdfllllllllllll jfdk jkdjfk fjdkfdk murad is gay gay agygy  gay
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <label asp-for="Password"></label><br />
-            <input asp-for="Password" />
-            <span asp-validation-for="Password"></span>
+    </div>
+</div>
+<div class="mainbody">
+    <div class="container">
+        <div class="row">
+            <div class="content col-xs-12" style="padding-top: 58.57142858px;">
+                <div class="login-wrap">
+                    <div class="page-header">
+                        <h1>
+                            <span>join with us</span>
+                        </h1>
+                    </div>
+                    <div class="login">
+                        <form method="post" asp-controller="Account" asp-action="Login"
+                              asp-route-returnUrl="@Model.ReturnUrl" class="form-horizontal">
+                            <div asp-validation-summary="ModelOnly"></div>
+                            <fieldset>
+                                <div class="form-group">
+                                    <div class="control-label col-sm-12">
+                                        <label asp-for="UserName">
+                                            Username
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input type="text" asp-for="UserName" required>
+                                        <span asp-validation-for="UserName"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12 control-label">
+                                        <label asp-for="Password">
+                                            Password
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input type="password" asp-for="Password" required>
+                                        <span asp-validation-for="Password"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-6">
+                                        <div class="checkbox">
+                                            <label asp-for="RememberMe">
+                                                <input type="checkbox" asp-for="RememberMe">Remember me
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 btn-wrap">
+                                        <button type="submit" class="btn btn-primary">Log in</button>
+                                    </div>
+                                </div>
+                                <div class="other-links form-group">
+                                    <div class="col-sm-12">
+                                        <a asp-controller="Account" asp-action="Register">Don't have an account?</a>
+                                        <a asp-controller="Account" asp-action="ForgotPassword">Forgot your password?</a>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <label asp-for="RememberMe"></label><br />
-            <input asp-for="RememberMe" />
-        </div>
-        <div>
-            <input type="submit" value="Войти" />
-        </div>
-    </form>
+    </div>
+</div>

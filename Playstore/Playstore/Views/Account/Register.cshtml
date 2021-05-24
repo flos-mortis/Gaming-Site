@@ -24,7 +24,8 @@
         <div class="row">
             <div class="content col-xs-12">
                 <div class="registration">
-                    <form id="member-registration" class="form-validate form-vertical">
+                    <form id="member-registration" class="form-validate form-vertical" method="post" asp-controller="Account" asp-action="Register">
+                        <div asp-validation-summary="ModelOnly"></div>
                         <fieldset>
                             <legend>User Registration</legend>
                             <div class="control-group">
@@ -35,21 +36,27 @@
                             </div>
                             <div class="control-group">
                                 <div class="control-label">
-                                    Username
+                                    <label asp-for="UserName">
+                                        Username
+                                    </label>
                                     <strong class="red">*</strong>
                                 </div>
                                 <div class="controls">
-                                    <input type="text" required>
+                                    <input type="text" asp-for="UserName" required>
                                 </div>
+                                <span asp-validation-for="UserName"></span>
                             </div>
                             <div class="control-group">
                                 <div class="control-label">
-                                    Email
+                                    <label asp-for="Email">
+                                        Email
+                                    </label>
                                     <strong class="red">*</strong>
                                 </div>
                                 <div class="controls">
-                                    <input type="email" required>
+                                    <input type="email" asp-for="Email" required>
                                 </div>
+                                <span asp-validation-for="Email"></span>
                             </div>
                             <div class="control-group">
                                 <div class="control-label">
@@ -82,21 +89,27 @@
                             </div>
                             <div class="control-group">
                                 <div class="control-label">
-                                    Password
+                                    <label asp-for="Password">
+                                        Password
+                                    </label>
                                     <strong class="red">*</strong>
                                 </div>
                                 <div class="controls">
-                                    <input type="password" required>
+                                    <input type="password" asp-for="Password" required>
                                 </div>
+                                <span asp-validation-for="Password"></span>
                             </div>
                             <div class="control-group">
                                 <div class="control-label">
-                                    Repeat Password
+                                    <label asp-for="PasswordConfirm">
+                                        Repeat Password
+                                    </label>
                                     <strong class="red">*</strong>
                                 </div>
                                 <div class="controls">
-                                    <input type="password" required>
+                                    <input type="password" asp-for="PasswordConfirm" required>
                                 </div>
+                                <span asp-validation-for="PasswordConfirm"></span>
                             </div>
                         </fieldset>
                         <div class="form-group form-actions">

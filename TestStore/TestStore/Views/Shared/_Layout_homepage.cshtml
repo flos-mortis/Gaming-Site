@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <link href="../image/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/site.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+</head>
+<body>
+    <div class="wrapper homepage">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="nav-toggle"><span></span></div>
+                    <div class="logo">
+                        <div class="logo-image">
+                            <a href="index.html">
+                                <img class="logo-img" src="../image/logo.png">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="head-right">
+                        <div class="head-language-switcher">
+                            <a href="#">
+                                <img src="../image/en-flag.jpg" class="en-flag">
+                            </a>
+                            <a href="#">
+                                <img src="../image/ru-flag.jpg" class="ru-flag">
+                            </a>
+                        </div>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                    <div class="head-logout">
+                        <form method="post" asp-controller="Account" asp-action="Logout">
+                            <input class="register-switch" type="submit" value="Logout" />
+                        </form>
+                    </div>
+                        }
+                        else
+                        {
+                            <div class="head-login">
+                                <a asp-controller="Account" asp-action="Login">
+                                    <input class="register-switch" type="button" value="Sign Up" />
+                                </a>
+                            </div>
+                            <div class="head-reg">
+                                <a asp-controller="Account" asp-action="Register">
+                                    <input class="register-switch" type="button" value="Sign In" />
+                                </a>
+                            </div>
+                        }
+                        <div class="head-cart">
+                            <button class="btn btn-cart" type="button">
+                                <i class="fa fa-shopping-cart"></i>
+                                <p><span class="total-product">0</span></p>
+                            </button>
+                        </div>
+                        <div class="head-search">
+                            <form class="search-box" method="POST">
+                                <input class="search-txt" name="" type="text" placeholder="Search ...">
+                                <a class="search-btn" href="#">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav id="mainnav" style="background-color: transparent;">
+            <div class="container">
+                <ul id="menu">
+                    <li><a href="/Home">Home</a>
+                    <li><a href="">New Releases</a>
+                    <li><a href="">News</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Shop<em class="caret"></em></a>
+                        <div id="dropdown-content">
+                            <ul class="dropdown-left">
+                                <li><a href="">Action</a></li>
+                                <li><a href="">Adventure</a></li>
+                                <li><a href="">Casual</a></li>
+                                <li><a href="">Free To Play</a></li>
+                                <li><a href="">Indie</a></li>
+                                <li><a href="">Massively Multiplayer</a></li>
+                            </ul>
+                            <ul class="dropdown-right">
+                                <li><a href="">Racing</a></li>
+                                <li><a href="">RPG</a></li>
+                                <li><a href="">Simulation</a></li>
+                                <li><a href="">Sports</a></li>
+                                <li><a href="">Strategy</a></li>
+                            </ul>
+                        </div>
+                </ul>
+            </div>
+        </nav>
+        <div class="slideshow">
+            <div class="owl-carousel owl-theme" style="opacity: 1; display: block;">
+                <div class="item">
+                    <div class="img-header-top" style="background-image: url(../image/sl-1.jpg);"></div>
+                    <div class="img-header" style="background-image: url(../image/sl-1.jpg);"></div>
+                    <div class="slider-content container row">
+                        <div class="slider-thumb col-sm-4">
+                            <img src="~/image/sl-thumb-1.jpg" />
+                        </div>
+                        <div class="col-sm-8">
+                            <h1 class="item-title">murad is gay gay gay gay gay gay gay and cal</h1>
+                            <a class="btn btn-primary" href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="img-header-bottom" style="background-image: url(../image/sl-1.jpg);"></div>
+                    <div class="img-header-bottom-mask"></div>
+                </div>
+                <div class="item">
+                    <div class="img-header-top" style="background-image: url(../image/sl-2.jpg);"></div>
+                    <div class="img-header" style="background-image: url(../image/sl-2.jpg);"></div>
+                    <div class="slider-content container row">
+                        <div class="slider-thumb col-sm-4">
+                            <img src="~/image/sl-thumb-2.jpg" />
+                        </div>
+                        <div class="col-sm-8">
+                            <h1 class="item-title">murad is gay gay gay gay gay gay gay and cal</h1>
+                            <a class="btn btn-primary" href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="img-header-bottom" style="background-image: url(../image/sl-2.jpg);"></div>
+                    <div class="img-header-bottom-mask"></div>
+                </div>
+                <div class="item">
+                    <div class="img-header-top" style="background-image: url(../image/sl-3.jpg);"></div>
+                    <div class="img-header" style="background-image: url(../image/sl-3.jpg);"></div>
+                    <div class="slider-content container row">
+                        <div class="slider-thumb col-sm-4">
+                            <img src="~/image/sl-thumb-3.jpg" />
+                        </div>
+                        <div class="col-sm-8">
+                            <h1 class="item-title">murad is gay gay gay gay gay gay gay and cal</h1>
+                            <a class="btn btn-primary" href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="img-header-bottom" style="background-image: url(../image/sl-3.jpg);"></div>
+                    <div class="img-header-bottom-mask"></div>
+                </div>
+                <div class="item">
+                    <div class="img-header-top" style="background-image: url(../image/sl-4.jpg);"></div>
+                    <div class="img-header" style="background-image: url(../image/sl-4.jpg);"></div>
+                    <div class="slider-content container row">
+                        <div class="slider-thumb col-sm-4">
+                            <img src="~/image/sl-thumb-4.jpg" />
+                        </div>
+                        <div class="col-sm-8">
+                            <h1 class="item-title">murad is gay gay gay gay gay gay gay and cal</h1>
+                            <a class="btn btn-primary" href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="img-header-bottom" style="background-image: url(../image/sl-4.jpg);"></div>
+                    <div class="img-header-bottom-mask"></div>
+                </div>
+            </div>
+        </div>
+        @RenderBody()
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col footer-col-left" style="min-height: 322px;">
+                        <div class="footer-col-inner">
+                            <div class="col">
+                                <div class="social-list">
+                                    <a title="Twitter" href="#" target="_blank">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                    <a title="YouTube" href="#" target="_blank">
+                                        <i class="fa fa-youtube"></i>
+                                    </a>
+                                    <a title="Vkontakte" href="#" target="_blank">
+                                        <i class="fa fa-vk"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-col-inner" id="footer-links">
+                            <div class="col">
+                                <div class="col-module">
+                                    <h3 class="module-title">
+                                        <span>Information</span>
+                                    </h3>
+                                    <ul class="module-content">
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="/Privacy">Privacy Policy</a></li>
+                                        <li><a href="#">Term & Conditions</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="col-module">
+                                    <h3 class="module-title">
+                                        <span>My Account</span>
+                                    </h3>
+                                    <ul class="module-content">
+                                        <li><a href="#">My Account</a></li>
+                                        <li><a href="#">Order History</a></li>
+                                        <li><a href="#">Shopping Cart</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-col footer-col-right" style="min-height: 322px;">
+                        <div class="footer-col-inner footer-right">
+                            <h3 class="module-title" id="contact-us-title"><span>Contact Us</span></h3>
+                            <div class="module-content">
+                                <div class="contact-us">
+                                    <h4>Warehouse & Offices</h4>
+                                    <p>Guildford, Guildford, Surrey, GU1, United Kingdom</p>
+                                    <h4>Retail Store</h4>
+                                    <p>Saint Edburghs Road, Birmingham, West Midlands, B25 8YA, United Kingdom</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="copyright">
+                <div class="container">
+                    <div class="footer-copy">
+                        <small>Copyright © 2021 Gayming Site. All Rights Reserved. Designed by </small>
+                        <a href="http:\\vk.com\siluwu">Silu Nurbakhtina</a>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </div>
+    <script>
+        $('.nav-toggle').on('click', function () {
+            $('#menu').toggleClass('active');
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="../js/site.js"></script>
+</body>
+</html>

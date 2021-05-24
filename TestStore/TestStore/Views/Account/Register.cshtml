@@ -1,33 +1,124 @@
 ﻿@model TestStore.ViewModels.RegisterViewModel
-<h2>Регистрация нового пользователя</h2>
-<form method="post" asp-controller="Account" asp-action="Register">
-    <div asp-validation-summary="ModelOnly"></div>
-    <div>
-        <label asp-for="UserName"></label><br />
-        <input asp-for="UserName" />
-        <span asp-validation-for="UserName"></span>
+
+@{
+    ViewData["Title"] = "Sign Up";
+    Layout = "_Layout";
+}
+<div class="wrap masthead">
+    <div class="ja-masthead">
+        <div id="masthead-bg" style="background-image: url(../image/masthead.jpg)">
+            <div class="container">
+                <div class="masthead-detail">
+                    <h3 class="masthead-title">
+                        new releases
+                    </h3>
+                    <div class="masthead-desc">
+                        kjdfllllllllllll jfdk jkdjfk fjdkfdk murad is gay gay agygy  gay
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <label asp-for="Email"></label><br />
-        <input asp-for="Email" />
-        <span asp-validation-for="Email"></span>
+</div>
+<div class="mainbody">
+    <div class="container">
+        <div class="row">
+            <div class="content col-xs-12" style="padding-top: 58.57142858px;">
+                <div class="registration">
+                    <form id="member-registration" class="form-validate form-vertical" method="post" asp-controller="Account" asp-action="Register">
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <fieldset>
+                            <legend>User Registration</legend>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    <strong class="red">*</strong>
+                                    Required field
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    <label asp-for="UserName">
+                                        Username
+                                    </label>
+                                    <strong class="red">*</strong>
+                                </div>
+                                <div class="controls">
+                                    <input type="text" asp-for="UserName" required>
+                                </div>
+                                <span asp-validation-for="UserName"></span>
+                            </div>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    <label asp-for="Email">
+                                        Email
+                                    </label>
+                                    <strong class="red">*</strong>
+                                </div>
+                                <div class="controls">
+                                    <input type="email" asp-for="Email" required>
+                                </div>
+                                <span asp-validation-for="Email"></span>
+                            </div>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    Gender
+                                    <strong class="red">*</strong>
+                                </div>
+                                <div class="controls">
+                                    <select required>
+                                        <option>CisPerson</option>
+                                        <option>TransPerson</option>
+                                        <option>NonBinaryPerson</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    Country
+                                </div>
+                                <div class="controls">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    City
+                                </div>
+                                <div class="controls">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    <label asp-for="Password">
+                                        Password
+                                    </label>
+                                    <strong class="red">*</strong>
+                                </div>
+                                <div class="controls">
+                                    <input type="password" asp-for="Password" required>
+                                </div>
+                                <span asp-validation-for="Password"></span>
+                            </div>
+                            <div class="control-group">
+                                <div class="control-label">
+                                    <label asp-for="PasswordConfirm">
+                                        Repeat Password
+                                    </label>
+                                    <strong class="red">*</strong>
+                                </div>
+                                <div class="controls">
+                                    <input type="password" asp-for="PasswordConfirm" required>
+                                </div>
+                                <span asp-validation-for="PasswordConfirm"></span>
+                            </div>
+                        </fieldset>
+                        <div class="form-group form-actions">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <label asp-for="Year"></label><br />
-        <input asp-for="Year" />
-        <span asp-validation-for="Year"></span>
-    </div>
-    <div>
-        <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-    <div>
-        <label asp-for="PasswordConfirm"></label><br />
-        <input asp-for="PasswordConfirm" />
-        <span asp-validation-for="PasswordConfirm"></span>
-    </div>
-    <div>
-        <input type="submit" value="Регистрация" />
-    </div>
-</form>
+</div>
