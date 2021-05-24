@@ -8,10 +8,12 @@ using Microsoft.EntityFrameworkCore;
 namespace TestStore.Models
 {
     public class ApplicationContext : IdentityDbContext<User>
-    {
-       public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
+    {       
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
             Database.EnsureCreated();
         }
+        public DbSet<Game> Games { get; set; }
+        public DbSet<Genre> Genres { get; set; }
     }
 }

@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 using TestStore.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using TestStore.Data.Interfaces;
+using TestStore.Data.Repository;
+using TestStore.Data;
 
 namespace TestStore
 {
@@ -35,6 +38,8 @@ namespace TestStore
             services.AddIdentity<User, IdentityRole>(opts => opts.User.RequireUniqueEmail = true)
                 .AddEntityFrameworkStores<ApplicationContext>()
                 .AddDefaultTokenProviders();
+            /*services.AddTransient<IGames, GameRepository>();
+            services.AddTransient<IGenre, GenreRepository>();*/
             services.AddControllersWithViews();
         }
 

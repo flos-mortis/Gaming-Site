@@ -92,7 +92,7 @@ namespace TestStore.Controllers
                 if (user != null)
                 {
                     // проверяем, подтвержден ли email
-                    if (!await _userManager.IsEmailConfirmedAsync(user))
+                    if (!await _userManager.IsEmailConfirmedAsync(user) && user.UserName != "Admin") 
                     {
                         ModelState.AddModelError(string.Empty, "Вы не подтвердили свой email");
                         return View(model);
