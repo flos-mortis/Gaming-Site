@@ -36,11 +36,11 @@
                         </div>
                         @if (User.Identity.IsAuthenticated)
                         {
-                    <div class="head-logout">
-                        <form method="post" asp-controller="Account" asp-action="Logout">
-                            <input class="register-switch" type="submit" value="Logout" />
-                        </form>
-                    </div>
+                            <div class="head-logout">
+                                <form method="post" asp-controller="Account" asp-action="Logout">
+                                    <input class="register-switch" type="submit" value="Logout" />
+                                </form>
+                            </div>
                         }
                         else
                         {
