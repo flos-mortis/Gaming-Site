@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Genre>
+<a>Genres</a>
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+               <h2><a>@item.Name</a></h2>
+    }
+}

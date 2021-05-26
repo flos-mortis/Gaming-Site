@@ -13,7 +13,7 @@ namespace TestStore
         {
             var emailMessage = new MimeMessage();
 
-            emailMessage.From.Add(new MailboxAddress("Администрация сайта", "play.store@internet.ru"));
+            emailMessage.From.Add(new MailboxAddress("Playstore", "play.store@internet.ru"));
             emailMessage.To.Add(new MailboxAddress("", email));
             emailMessage.Subject = subject;
             emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html)
