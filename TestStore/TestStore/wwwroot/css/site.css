@@ -127,7 +127,7 @@ option {
         width: 752px
     }
 
-    .col-sm-6, .col-sm-8, .col-sm-4 {
+    .col-sm-8, .col-sm-4 {
         float: left;
     }
 
@@ -1204,10 +1204,6 @@ legend + .control-group {
     padding: 32px;
 }
 
-.form-horizontal .form-group {
-    overflow: auto;
-}
-
 .login-wrap .form-group + .form-group {
     margin-top: 20px;
 }
@@ -1234,10 +1230,13 @@ legend + .control-group {
         position: absolute;
         margin-left: -20px;
     }
-
-.login-wrap .form-group .btn-wrap {
-    text-align: right;
+.login-wrap .form-group .col-sm-12 .btn{
+    width: 100%;
 }
+.login-wrap .form-group .btn-wrap{
+    margin-top: 10px;
+}
+
 
 .login-wrap .other-links a {
     color: #ffffff;
@@ -1608,7 +1607,6 @@ footer .col-module .module-title {
 footer small {
     font-size: 100%;
 }
-
 /*-----------------------------------
         футер конец
 ----------------------------------------*/
