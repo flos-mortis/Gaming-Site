@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using TestStore.Data.Interfaces;
 using TestStore.Data.Repository;
 using TestStore.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace TestStore
 {
@@ -40,6 +41,14 @@ namespace TestStore
                 .AddDefaultTokenProviders();
             /*services.AddTransient<IGames, GameRepository>();
             services.AddTransient<IGenre, GenreRepository>();*/
+
+            services.AddAuthentication()
+                .AddGoogle(opts =>
+                {
+                    opts.ClientId = "376565521633-ovqjk2hotfb7e5jsm1mj5r0pu1brdd2q.apps.googleusercontent.com";
+                    opts.ClientSecret = "i0p0c0dxOwSCUE5Q3HfvOtX9";
+                    opts.SignInScheme = IdentityConstants.ExternalScheme;
+                });
             services.AddControllersWithViews();
         }
 
