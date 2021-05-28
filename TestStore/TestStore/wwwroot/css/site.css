@@ -1420,7 +1420,7 @@ legend + .control-group {
     margin-top: 50px;
     margin-bottom: 20px;
 }
-.about, .terms, .privacy {
+.about {
     text-align: center;
     margin-top: 50px;
     background-image: radial-gradient(ellipse farthest-side, rgba(0, 111, 255, 0.15), transparent);
@@ -1431,17 +1431,11 @@ legend + .control-group {
         margin-left: auto;
         margin-right: auto;
     }
-    .terms p, .privacy p {
-        font-size: 15px;
-        max-width: 65%;
-        margin-left: auto;
-        margin-right: auto;
-    }
     .about i {
         font-size: 1.75rem;
         margin-bottom: 40px;
     }
-    .about h3, .terms h3, .privacy h3 {
+    .about h3 {
         font-weight: 700;
         text-transform: uppercase;
     }
