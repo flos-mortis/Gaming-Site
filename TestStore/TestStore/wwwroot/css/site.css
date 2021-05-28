@@ -1390,6 +1390,8 @@ legend + .control-group {
 .productdetails-tabs .customer-reviews .list-reviews .normal {
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 0;
+    padding: 12px;
+    margin-bottom: 8px;
 }
 
 .productdetails-tabs .customer-reviews .list-reviews span.date {
@@ -1400,20 +1402,47 @@ legend + .control-group {
     right: auto;
     top: auto;
     float: right;
+    font-size: 10px;
+}
+.productdetails-tabs .customer-reviews .list-reviews .rating-mini{
+    float: right;
+    margin-right: 10px;
+}
+.productdetails-tabs .customer-reviews .list-reviews blockquote {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 12px;
+    font-size: 12px;
+    word-wrap: break-word;
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #67c1f5;
+    box-sizing: border-box;
+}
+.list-reviews .normal blockquote:before {
+    content: open-quote;
+    font-weight: 700;
+    font-size: 24px;
+    padding-right: 6px;
+}
+
+.list-reviews .normal blockquote:after {
+    content: close-quote;
+    font-weight: 700;
+    font-size: 24px;
+    padding-left: 6px;
 }
 
 
 
-
-/* конец профиля игры */
-
-
-/*-------------------------------------------
+    /* конец профиля игры */
+    /*-------------------------------------------
     ------ABOUT PAGE--------------------------
 -------------------------------------------------*/
 
 
-#map {
+    #map {
     height: 400px;
     width: 75%;
     margin: auto;
