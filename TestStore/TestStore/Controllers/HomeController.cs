@@ -6,21 +6,28 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using TestStore.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace TestStore.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private ApplicationContext db;
+        public HomeController(ILogger<HomeController> logger, ApplicationContext db)
         {
             _logger = logger;
+            this.db = db;
         }
 
-        public IActionResult Index()
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
+
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await db.Games.ToListAsync());
         }
         public IActionResult About()
         {
@@ -30,15 +37,13 @@ namespace TestStore.Controllers
         {
             return View();
         }
-        public IActionResult Terms_conditions()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
     }
 }
