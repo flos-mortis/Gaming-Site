@@ -130,8 +130,8 @@
                                     </h3>
                                     <ul class="module-content">
                                         <li><a asp-controller="Home" asp-action="About">About Us</a></li>
-                                        <li><a>Privacy Policy</a></li>
-                                        <li><a href="#">Term & Conditions</a></li>
+                                        <li><a asp-controller="Home" asp-action="Privacy">Privacy Policy</a></li>
+                                        <li><a asp-controller="Home" asp-action="Terms_conditions">Term & Conditions</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -181,5 +181,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="../js/site.js"></script>
+
 </body>
 </html>
