@@ -1247,9 +1247,60 @@ legend + .control-group {
     color: #000000;
 }
 /* конец страницы логина */
-/* страницца пользователя */
-.profile .sidebar-left {
-    border-right: none;
+
+
+/* -----------------------------------------------------------
+    -------------------------USER PROFILE--------------------
+---------------------------------------------------------*/
+
+
+.module-left-side-content {
+    float: left;
+    width: 20%;
+    margin-left: 30px;
+}
+.module-right-side-content {
+    float: right;
+    width: 75%;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 15px;
+}
+.module-profile-content {
+    float: left;
+    width: 55%;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+    .module-profile-content .username {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+.user-reviews{
+    float: right;
+    width: 40%;
+    margin-left: 10px;
+}
+    .user-reviews .list-reviews .normal {
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 0;
+        padding: 12px;
+        margin-bottom: 8px;
+    }
+        .user-reviews .list-reviews .normal blockquote {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+        }
+
+.user-info-fields{
+    float: left;
+    width: 65%;
+}
+.fav-game {
+    float: right;
+    width: 35%;
+}
+.fav-game p, .user-reviews .list-reviews p{
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
 .avatar-module img {
@@ -1261,24 +1312,18 @@ legend + .control-group {
 }
 
 .user-info {
-    float: left;
+    overflow: auto;
+    margin-top: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-    .user-info .username {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
 
-    .user-info h1 {
-        text-transform: uppercase;
-        font-size: 16px;
-    }
+/* -----------------------------------------------------------
+    -------------------------USER PROFILE END--------------------
+---------------------------------------------------------*/
 
-.fav-game {
-    float: right;
-    width: 30%;
-}
 
-/* конец страницы пользователя */
+
 
 /* профиль игры */
 
