@@ -1243,11 +1243,11 @@ legend + .control-group {
     opacity: 0.5;
     font-size: 12px;
 }
-
+.login-wrap .form-group .btn-outline-dark:focus, .login-wrap .form-group .btn-outline-dark:hover{
+    color: #000000;
+}
 /* конец страницы логина */
-
 /* страницца пользователя */
-
 .profile .sidebar-left {
     border-right: none;
 }
@@ -1434,7 +1434,28 @@ legend + .control-group {
     padding-left: 6px;
 }
 
-
+.list-reviews .leave-review{
+    margin-top: 50px;
+    padding-top: 50px;
+}
+.list-reviews .leave-review p{
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+}
+    .list-reviews .leave-review textarea {
+        width: 100%;
+        outline: none;
+        -moz-appearance: none;
+        border: 4px solid #1b2838;
+        overflow: auto;
+        resize: none;
+        background: rgba(255,255,255,0.05);
+        padding: 8px 0 8px 10px;
+        height: 150px;
+        color: #ffffff;
+    }
+    
 
     /* конец профиля игры */
     /*-------------------------------------------

@@ -220,6 +220,13 @@
                                             </blockquote>
                                             <span>MinachevGaymDev_2001</span>
                                         </div>
+                                        @if (User.Identity.IsAuthenticated){
+                                            <div class="normal leave-review">
+                                                <p>Leave your review</p>
+                                                <textarea class="review-field"></textarea>
+                                                <input type="submit" class="btn btn-primary" value="Submit">
+                                            </div>
+                                         }
                                     </div>
                                 </div>
                             </div>
