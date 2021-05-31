@@ -182,14 +182,14 @@
                         </ul>
 
                         <div class="tab-content">
-                            <div id="desc" class="container tab-pane active">
+                            <div id="desc" class="tab-pane active">
                                 <div class="product-desc">
                                     <p style="color: #ffffff">
-                                        kjfdsjflsjfls ljflgkfdlfj gjfdlkgjsldf jgjfldksjljg
+                                        This cool game is about ummm
                                     </p>
                                 </div>
                             </div>
-                            <div id="review" class="container tab-pane fade">
+                            <div id="review" class="tab-pane fade">
                                 <div class="customer-reviews">
                                     <div class="list-reviews">
                                         <div class="normal">
@@ -202,10 +202,31 @@
                                                 <span></span>
                                             </div>
                                             <blockquote>
-                                                fljs jldjfgldkjg gldglkj jgflsdkjglfdsjg gjdfklsj
+                                                This game is KAL
                                             </blockquote>
-                                            <span>Harladj Lisuidc</span>
+                                            <span>MinachevGaymDev_2001</span>
                                         </div>
+                                        <div class="normal">
+                                            <span class="date">Monanjsy, 21 daevember 2019</span>
+                                            <div class="rating-mini">
+                                                <span class="active"></span>
+                                                <span class="active"></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <blockquote>
+                                                This game is KAL
+                                            </blockquote>
+                                            <span>MinachevGaymDev_2001</span>
+                                        </div>
+                                        @if (User.Identity.IsAuthenticated){
+                                            <div class="normal leave-review">
+                                                <p>Leave your review</p>
+                                                <textarea class="review-field"></textarea>
+                                                <input type="submit" class="btn btn-primary" value="Submit">
+                                            </div>
+                                         }
                                     </div>
                                 </div>
                             </div>

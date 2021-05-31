@@ -1243,13 +1243,64 @@ legend + .control-group {
     opacity: 0.5;
     font-size: 12px;
 }
-
+.login-wrap .form-group .btn-outline-dark:focus, .login-wrap .form-group .btn-outline-dark:hover{
+    color: #000000;
+}
 /* конец страницы логина */
 
-/* страницца пользователя */
 
-.profile .sidebar-left {
-    border-right: none;
+/* -----------------------------------------------------------
+    -------------------------USER PROFILE--------------------
+---------------------------------------------------------*/
+
+
+.module-left-side-content {
+    float: left;
+    width: 20%;
+    margin-left: 30px;
+}
+.module-right-side-content {
+    float: right;
+    width: 75%;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 15px;
+}
+.module-profile-content {
+    float: left;
+    width: 55%;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+    .module-profile-content .username {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+.user-reviews{
+    float: right;
+    width: 40%;
+    margin-left: 10px;
+}
+    .user-reviews .list-reviews .normal {
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 0;
+        padding: 12px;
+        margin-bottom: 8px;
+    }
+        .user-reviews .list-reviews .normal blockquote {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+        }
+
+.user-info-fields{
+    float: left;
+    width: 65%;
+}
+.fav-game {
+    float: right;
+    width: 35%;
+}
+.fav-game p, .user-reviews .list-reviews p{
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
 .avatar-module img {
@@ -1261,24 +1312,18 @@ legend + .control-group {
 }
 
 .user-info {
-    float: left;
+    overflow: auto;
+    margin-top: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-    .user-info .username {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
 
-    .user-info h1 {
-        text-transform: uppercase;
-        font-size: 16px;
-    }
+/* -----------------------------------------------------------
+    -------------------------USER PROFILE END--------------------
+---------------------------------------------------------*/
 
-.fav-game {
-    float: right;
-    width: 30%;
-}
 
-/* конец страницы пользователя */
+
 
 /* профиль игры */
 
@@ -1390,6 +1435,8 @@ legend + .control-group {
 .productdetails-tabs .customer-reviews .list-reviews .normal {
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 0;
+    padding: 12px;
+    margin-bottom: 8px;
 }
 
 .productdetails-tabs .customer-reviews .list-reviews span.date {
@@ -1400,20 +1447,68 @@ legend + .control-group {
     right: auto;
     top: auto;
     float: right;
+    font-size: 10px;
+}
+.productdetails-tabs .customer-reviews .list-reviews .rating-mini{
+    float: right;
+    margin-right: 10px;
+}
+.productdetails-tabs .customer-reviews .list-reviews blockquote {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 12px;
+    font-size: 12px;
+    word-wrap: break-word;
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #67c1f5;
+    box-sizing: border-box;
+}
+.list-reviews .normal blockquote:before {
+    content: open-quote;
+    font-weight: 700;
+    font-size: 24px;
+    padding-right: 6px;
 }
 
+.list-reviews .normal blockquote:after {
+    content: close-quote;
+    font-weight: 700;
+    font-size: 24px;
+    padding-left: 6px;
+}
 
+.list-reviews .leave-review{
+    margin-top: 50px;
+    padding-top: 50px;
+}
+.list-reviews .leave-review p{
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+}
+    .list-reviews .leave-review textarea {
+        width: 100%;
+        outline: none;
+        -moz-appearance: none;
+        border: 4px solid #1b2838;
+        overflow: auto;
+        resize: none;
+        background: rgba(255,255,255,0.05);
+        padding: 8px 0 8px 10px;
+        height: 150px;
+        color: #ffffff;
+    }
+    
 
-
-/* конец профиля игры */
-
-
-/*-------------------------------------------
+    /* конец профиля игры */
+    /*-------------------------------------------
     ------ABOUT PAGE--------------------------
 -------------------------------------------------*/
 
 
-#map {
+    #map {
     height: 400px;
     width: 75%;
     margin: auto;

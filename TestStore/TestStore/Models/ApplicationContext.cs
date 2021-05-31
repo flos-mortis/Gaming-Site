@@ -10,8 +10,8 @@ namespace TestStore.Models
     public class ApplicationContext : IdentityDbContext<User>
     {       
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
-        {
-
+        {            
+            //Database.EnsureDeleted();
             Database.EnsureCreated();
         }
         public DbSet<Game> Games { get; set; }

@@ -95,18 +95,15 @@
                     </div>
                 </div>
             </div>
-            <!--_________________________________________________________________________________________________-->
-
-
-            @{
-                foreach (var item in Model)
-                {
-                    <div id="content" class="content col col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
-                        <div class="featured-view">
-                            <h4><span>Featured Products</span></h4>
-                            <div class="row equal-height equal-height-child">
-                                <div class="product vm-col vm-col-3 vertical-separator col">
-                                    <div class="spacer">
+            <div id="content" class="content col col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+                <div class="featured-view">
+                    <h4><span>Featured Products</span></h4>
+                    <div class="row equal-height equal-height-child">
+                        <div class="product vm-col vm-col-3 vertical-separator col">
+                            <div class="spacer">
+                                @{
+                                    foreach (var item in Model)
+                                    {
                                         <div class="vm-product-media-container">
                                             <a title="" href="#">
                                                 <img class="browseProductImage" src="../image/assassins_creed_chronicles.jpg" />
@@ -114,7 +111,6 @@
 
                                             <div class="vm-product-descr-container">
                                                 <h2>
-                                                    @*<a href="#">game1</a>*@
                                                     @Html.DisplayNameFor(item => item.Name)
                                                 </h2>
                                                 <div class="platforms-field">
@@ -157,13 +153,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
+                                    }
+                                 }
                             </div>
                         </div>
                     </div>
-                    }
-                }
+                </div>
+            </div>
         </div>
     </div>
 </div>

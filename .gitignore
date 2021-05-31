@@ -439,3 +439,5 @@ FodyWeavers.xsd
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 *.tlog
+Playstore/.vs/Playstore/v16/.suo
+*.cache

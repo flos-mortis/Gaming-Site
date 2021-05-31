@@ -230,6 +230,10 @@ namespace TestStore.Controllers
             }
             return RedirectToAction("Account", "Register");
         }
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }
 
