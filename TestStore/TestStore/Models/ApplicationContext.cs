@@ -11,6 +11,7 @@ namespace TestStore.Models
     {       
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
+
             Database.EnsureCreated();
         }
         public DbSet<Game> Games { get; set; }
