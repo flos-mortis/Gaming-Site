@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "My profile";
+    Layout = "_Layout";
+}
+<div id="mainbody" class="wrap mainbody profile">
+    <div class="container">
+        <div class="row equal-height">
+            <div id="content" class="content" style="padding-top: 58.57142858px;">
+                <div class="module-left-side-content" style="width:30%;">
+                    <div class="module avatar-module">
+                        <img src="~/image/ava-example.jpg" />
+                        <input type="file" style="margin-top: 10px;" value="Edit avatar">
+                    </div>
+                </div>
+                <div class="module-right-side-content" style="width:65%;">
+                    <div class="module-profile-content" style="border-right: none">
+                        <div class="username">
+                            <span>Username:</span>
+                            <input type="text" required />
+                        </div>
+                        <div class="user-info" style="border-bottom: none;">
+                            <div class="edit-info-fields">
+                                <div class="email info-field">
+                                    <span>Email:</span>
+                                    <input type="email" required />
+                                </div>
+                                <div class="gender info-field">
+                                    <span>Gender:</span>
+                                    <select required>
+                                        <option>CisPerson</option>
+                                        <option>TransPerson</option>
+                                        <option>NonBinaryPerson</option>
+                                    </select>
+                                </div>
+                                <div class="country info-field">
+                                    <span>Country:</span>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-about">
+                            <div class="normal">
+                                <p>About:</p>
+                                <textarea></textarea>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Save">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

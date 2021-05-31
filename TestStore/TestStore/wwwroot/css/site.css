@@ -1316,6 +1316,9 @@ legend + .control-group {
     margin-top: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+.user-info .info-field{
+    margin-top: 15px;
+}
 
 
 /* -----------------------------------------------------------
@@ -1488,7 +1491,7 @@ legend + .control-group {
     font-size: 16px;
     font-weight: 700;
 }
-    .list-reviews .leave-review textarea {
+    .list-reviews .leave-review textarea, .user-about textarea {
         width: 100%;
         outline: none;
         -moz-appearance: none;
