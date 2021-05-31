@@ -14,5 +14,9 @@ namespace TestStore.Controllers
         {
             return View();
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
