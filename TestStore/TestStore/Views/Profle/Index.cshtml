@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "My profile";
+    Layout = "_Layout";
+}
+@model User
+<div id="mainbody" class="wrap mainbody profile">
+    <div class="container">
+        <div class="row equal-height">
+            <div id="content" class="content" style="padding-top: 58.57142858px;">
+                <div class="module-left-side-content">
+                    <div class="module avatar-module">
+                        <img src="~/image/ava-example.jpg" />
+                        <a class="btn btn-primary" style="margin-top: 10px;">Edit profile</a>
+                    </div>
+                </div>
+                <div class="module-right-side-content">
+                    <div class="module-profile-content">
+                        <div class="username">
+                            <h1>@Model.UserName</h1>
+                        </div>
+                        <div class="user-info">
+                            <div class="user-info-fields">
+                                <div class="email">
+                                    <span>Email:</span>
+                                    <p>@Model.Email</p>
+                                </div>
+                                <div class="gender">
+                                    <span>Gender:</span>
+                                    <p>----</p>
+                                </div>
+                                <div class="b-day">
+                                    <span>Birth date:</span>
+                                    <p>@Model.Year</p>
+                                </div>
+                                <div class="country">
+                                    <span>Country:</span>
+                                    <p>----</p>
+                                </div>
+                            </div>
+                            <div class="fav-game">
+                                <p>Favorite game</p>
+                                <div class="module-ct">
+                                    <div class="spacer">
+                                        <a href="#">
+                                            <img src="~/image/destiny_game.jpg" class="hot-game-img" />
+                                        </a>
+                                        <a class="fav-game-title" style="color: #ffffff;" href="">-----</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-about">
+                            <div class="normal">
+                                <p>About:</p>
+                                <p>----</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-reviews">
+                        <div class="list-reviews">
+                            <p>Reviews</p>
+                            <div class="normal">
+                                <span class="date">Monanjsy, 21 daevember 2019</span>
+                                <div class="rating-mini">
+                                    <span class="active"></span>
+                                    <span class="active"></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <blockquote>
+                                    gamereview1
+                                </blockquote>
+                            </div>
+                            <div class="normal">
+                                <span class="date">Monanjsy, 21 daevember 2019</span>
+                                <div class="rating-mini">
+                                    <span class="active"></span>
+                                    <span class="active"></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <blockquote>
+                                    gamereview2
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
