@@ -1,32 +1,40 @@
 ﻿@model Game
 @{
-    ViewBag.Title = "Добавление продукта";
+    ViewBag.Title = "Add product";
 }
-<form asp-action="Create" asp-controller="Games">
-    <div class="form-group">
-        <label asp-for="Name" class="control-label">Name</label>
-        <input type="text" asp-for="Name" class="form-control" required />
+<div class="mainbody">
+    <div class="container">
+        <div class="row">
+            <div class="content col-xs-12" style="padding-top: 58.57142858px;">
+                <form asp-action="Create" asp-controller="Games">
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label">Name</label>
+                        <input type="text" asp-for="Name" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label">Price</label>
+                        <input asp-for="Price" type="number" step=".01" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SalePrice" class="control-label">Sale price (optional)</label>
+                        <input asp-for="SalePrice" type="number" step=".01" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label">Description</label>
+                        <textarea type="text" asp-for="Description" class="form-control" required></textarea>
+                    </div>
+                    <partial>
+                        @{Html.RenderPartial("GenresPartial");}
+                    </partial>
+                    <!-- <div class="form-group">
+                         <label asp-for="GenreId" class="control-label">Цена</label>
+                         <textarea type="text" asp-for="GenreId" class="form-control" />
+                     </div> -->
+                    <div class="form-group">
+                        <input type="submit" value="SUBMIT" class="btn btn-default" />
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label asp-for="Price" class="control-label">Price</label>
-        <input asp-for="Price" type="number" step=".01" class="form-control" required />
-    </div>
-    <div class="form-group">
-        <label asp-for="SalePrice" class="control-label">Sale price (optional)</label>
-        <input asp-for="SalePrice" type="number" step=".01" class="form-control"/>
-    </div>
-    <div class="form-group">
-        <label asp-for="Description" class="control-label">Description</label>
-        <textarea type="text" asp-for="Description" class="form-control" required></textarea>
-    </div>
-    <partial>
-        @{Html.RenderPartial("GenresPartial");}
-    </partial>
-   <!-- <div class="form-group">
-        <label asp-for="GenreId" class="control-label">Цена</label>
-        <textarea type="text" asp-for="GenreId" class="form-control" />
-    </div> -->
-    <div class="form-group">
-        <input type="submit" value="SUBMIT" class="btn btn-default" />
-    </div>
-</form>
+</div>
