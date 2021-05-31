@@ -18,5 +18,9 @@ namespace TestStore.Controllers
         {
             return View();
         }
+        public IActionResult NewsItem()
+        {
+            return View();
+        }
     }
 }
