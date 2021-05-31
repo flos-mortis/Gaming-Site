@@ -86,7 +86,7 @@
                             </a>
                             <a class="hot-game-title" href="">СУДЬБА БОГОВ</a>
                             <p class="product-desc">
-                                @Model.First().Description
+                               
                             </p>
                             <div class="hot-game-link">
                                 <a href="" class="btn btn-primary">Product details</a>
@@ -95,15 +95,18 @@
                     </div>
                 </div>
             </div>
-            <div id="content" class="content col col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
-                <div class="featured-view">
-                    <h4><span>Featured Products</span></h4>
-                    <div class="row equal-height equal-height-child">
-                        <div class="product vm-col vm-col-3 vertical-separator col">
-                            <div class="spacer">
-                                @{
-                                    foreach (var item in Model)
-                                    {
+            <!--_________________________________________________________________________________________________-->
+
+
+            @{
+                foreach (var item in Model)
+                {
+                    <div id="content" class="content col col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+                        <div class="featured-view">
+                            <h4><span>Featured Products</span></h4>
+                            <div class="row equal-height equal-height-child">
+                                <div class="product vm-col vm-col-3 vertical-separator col">
+                                    <div class="spacer">
                                         <div class="vm-product-media-container">
                                             <a title="" href="#">
                                                 <img class="browseProductImage" src="../image/assassins_creed_chronicles.jpg" />
@@ -111,7 +114,8 @@
 
                                             <div class="vm-product-descr-container">
                                                 <h2>
-                                                    @Html.DisplayNameFor(item => item.Name)
+                                                    @*<a href="#">game1</a>*@
+                                                    @item.Name
                                                 </h2>
                                                 <div class="platforms-field">
                                                     <span>
@@ -121,7 +125,7 @@
                                                     </span>
                                                 </div>
                                                 <p class="product-desc">
-                                                    @Html.DisplayNameFor(item => item.Description)
+                                                    @item.Description
                                                 </p>
                                                 <div class="product-price-block">
                                                     <div class="base-price price-block">
@@ -129,7 +133,7 @@
                                                             Base price:
                                                         </span>
                                                         <span class="base-price-val">
-                                                            @Html.DisplayNameFor(item => item.Price)
+                                                            @item.Price
                                                         </span>
                                                     </div>
                                                     <div class="sale-price price-block">
@@ -137,8 +141,7 @@
                                                             Sales price:
                                                         </span>
                                                         <span class="sale-price-val">
-                                                            $44.5
-                                                            @Html.DisplayNameFor(item => item.SalePrice)
+                                                            @item.SalePrice
                                                         </span>
                                                     </div>
                                                     <div class="addtocart-block">
@@ -153,13 +156,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    }
-                                 }
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    }
+                }
         </div>
     </div>
 </div>

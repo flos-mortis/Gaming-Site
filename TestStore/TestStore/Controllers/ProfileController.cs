@@ -6,6 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using TestStore.Models;
 using TestStore.ViewModels;
+using System.Security.Claims;
+using System.IO;
+using System.Web;
 
 namespace TestStore.Controllers
 {
@@ -18,9 +21,10 @@ namespace TestStore.Controllers
             this.db = db;
             this.userManager = userManager;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            User user = await userManager.GetUserAsync(User);
+            return View(user);
         }
         public IActionResult AllReviews()
         {
@@ -28,7 +32,7 @@ namespace TestStore.Controllers
             return View(articles);
         }
         public IActionResult Edit()
-        {
+        {           
             return View();
         }
         [HttpPost]
@@ -36,20 +40,18 @@ namespace TestStore.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = await userManager.FindByIdAsync(model.Id);
+                User user = await userManager.GetUserAsync(User);
                 if (user != null)
                 {
-                    user.Email = model.Email;
+                    user.About = model.About;
+                    user.Country = model.Country;
                     user.UserName = model.UserName;
                     user.Year = model.Year;
-
-
-
+                    user.Picture = model.Picture;
+                    user.Email = model.Email;
                     var result = await userManager.UpdateAsync(user);
-                    if (result.Succeeded)
-                    {
+                    if(result.Succeeded)
                         return RedirectToAction("Index");
-                    }
                     else
                     {
                         foreach (var error in result.Errors)

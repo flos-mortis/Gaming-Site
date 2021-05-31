@@ -18,7 +18,7 @@ namespace TestStore.ViewModels
 
         [Required]
         [Display(Name = "Год рождения")]
-        public DateTime? Year { get; set; }
+        public int Year { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

@@ -11,7 +11,9 @@ namespace TestStore.ViewModels
         public string Id { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
-        public DateTime? Year { get; set; }
+        public int Year { get; set; }
+        public string Country { get; set; }
+        public byte[] Picture { get; set; }
         public Game FavGame { get; set; }
         public string About { get; set; }
     }

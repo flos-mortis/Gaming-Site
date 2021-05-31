@@ -8,8 +8,10 @@ namespace TestStore.Models
 {
     public class User : IdentityUser
     {
-        public DateTime? Year { get;set; }
+        public int Year { get;set; }
         public string About { get; set; }
+        public string Country { get; set; }
+        public byte[] Picture { get; set; }
         public virtual Game FavGame { get; set; }
     }
 }
