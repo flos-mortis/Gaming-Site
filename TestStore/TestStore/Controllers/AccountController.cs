@@ -228,9 +228,13 @@ namespace TestStore.Controllers
                     return RedirectToAction("Index", "Home");
                 }
             }
-            return RedirectToAction("Account", "Register");
+            return RedirectToAction("Register", "Account");
         }
         public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult EditProfile()
         {
             return View();
         }
