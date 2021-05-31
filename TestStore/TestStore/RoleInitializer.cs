@@ -13,7 +13,7 @@ namespace TestStore
         {
             string adminName = "Admin";
             string adminEmail = "admin@gmail.com";
-            int adminYear = 1337;
+            DateTime adminYear = new DateTime(1999, 11, 11);
             string password = "Qwerty69";
             if (await roleManager.FindByNameAsync("admin") == null)
             {

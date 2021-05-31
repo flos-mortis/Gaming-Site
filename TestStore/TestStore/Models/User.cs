@@ -8,6 +8,8 @@ namespace TestStore.Models
 {
     public class User : IdentityUser
     {
-        public int Year { get;set; }
+        public DateTime? Year { get;set; }
+        public string About { get; set; }
+        public virtual Game FavGame { get; set; }
     }
 }
