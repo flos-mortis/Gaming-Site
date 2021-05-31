@@ -1,13 +1,21 @@
 ﻿@model Genre
 @{
-    ViewBag.Title = "Добавление жанра";
+    ViewBag.Title = "Add genre";
 }
-<form asp-action="GenreCreate" asp-controller="Games">
-    <div class="form-group">
-        <label asp-for="Name" class="control-label">Name</label>
-        <input type="text" asp-for="Name" class="form-control" required />
+<div class="mainbody">
+    <div class="container">
+        <div class="row">
+            <div class="content col-xs-12" style="padding-top: 58.57142858px;">
+                <form asp-action="GenreCreate" asp-controller="Games">
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label">Name</label>
+                        <input type="text" asp-for="Name" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="SUBMIT" class="btn btn-default" />
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <input type="submit" value="SUBMIT" class="btn btn-default" />
-    </div>
-</form>
+</div>

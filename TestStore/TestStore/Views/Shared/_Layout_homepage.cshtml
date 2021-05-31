@@ -76,11 +76,11 @@
         <nav id="mainnav" style="background-color: transparent;">
             <div class="container">
                 <ul id="menu">
-                    <li><a href="/Home">Home</a>
+                    <li><a asp-controller="Home" asp-action="Index">Home</a>
                     <li><a asp-controller="Games" asp-action="Index">New Releases</a>
-                    <li><a href="">News</a>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Shop<em class="caret"></em></a>
+                    <li><a asp-controller="News" asp-action="Index">News</a></li>
+                    <li class="dropbtn">
+                        <a asp-controller="Shop" asp-action="Index" class="dropdown-toggle">Shop<em class="caret"></em></a>
                         <div id="dropdown-content">
                             <ul class="dropdown-left">
                                 <li><a href="">Action</a></li>
