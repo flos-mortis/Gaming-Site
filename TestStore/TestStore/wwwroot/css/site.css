@@ -142,6 +142,7 @@ option {
 
     .col-sm-8, .col-sm-4 {
         float: left;
+        width: 33.33333333%;
     }
 
     .col-sm-6 {
@@ -1581,9 +1582,10 @@ legend + .control-group {
 ---------------------------------------------------------*/
 
 
-/*-----------------------------------
-        футер начало
-    ----------------------------------------*/
+/*---------------------------------------------------
+ ------------------футер начало----------------------
+    ------------------------------------------------*/
+
 footer {
     background: #131c27;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -1605,17 +1607,25 @@ footer {
     padding-left: 16px;
 }
 
-.footer-col-left {
-    width: 75%;
+.spotlight {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-left: 0;
+    margin-right: 0;
 }
 
-.footer-col-inner {
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.footnav1{
+    border-bottom: 0;
+}
+
+.footnav .module {
+    background: #131c27;
+    color: #7a828b;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #footer-links {
-    display: flex;
-    flex-direction: row;
+    border-bottom: 0;
 }
 
 .col {
@@ -1652,7 +1662,7 @@ footer {
     margin-bottom: 20px;
 }
 
-footer .col-module .module-title {
+.footnav .module .module-title {
     color: #ffffff;
     font-size: 12px;
     margin-bottom: 10px;
@@ -1667,7 +1677,7 @@ footer .col-module .module-title {
     margin-bottom: 20px;
 }
 
-.footer-right .module-content {
+.footer-right .module-ct {
     padding: 0 20px 20px;
 }
 
@@ -1696,7 +1706,7 @@ footer .col-module .module-title {
     text-decoration: none;
 }
 
-.col-module .module-content :hover {
+.module-content :hover {
     opacity: 1;
     color: #ffffff;
 }
@@ -1705,9 +1715,6 @@ footer .col-module .module-title {
     margin-top: 10px;
 }
 
-.footer-col-right {
-    width: 25%;
-}
 
 .contact-us h4 {
     font-size: 14px;

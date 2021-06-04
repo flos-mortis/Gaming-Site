@@ -118,7 +118,7 @@ namespace TestStore.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Неправильный логин и (или) пароль");
+                    ModelState.AddModelError("", "Incorrect login or(and) password");
                 }
             }
             return View(model);
