@@ -27,7 +27,7 @@ namespace DAL.Repositories
             this.userManager = userManager;
             this.signInManager = signInManager;
         }
-        public IUserPasswordRepository UserPasswords
+        public IAccountRepository UserPasswords
         {
             get
             {
@@ -87,6 +87,11 @@ namespace DAL.Repositories
 
             }
         }
+
+        public IAccountRepository Accounts => throw new NotImplementedException();
+
+        public IRepository<Order> Orders => throw new NotImplementedException();
+
         private bool disposed = false;
         public virtual void Dispose(bool disposing)
         {

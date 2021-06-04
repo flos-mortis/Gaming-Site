@@ -10,7 +10,7 @@
                 <div class="module-left-side-content">
                     <div class="module avatar-module">
                         <img src="~/image/ava-example.jpg" />
-                        <a class="btn btn-primary" style="margin-top: 10px;">Edit profile</a>
+                        <a asp-controller="Profile" asp-action="Edit" class="btn btn-primary" style="margin-top: 10px;">Edit profile</a>
                     </div>
                 </div>
                 <div class="module-right-side-content">
@@ -52,7 +52,7 @@
                         <div class="user-about">
                             <div class="normal">
                                 <p>About:</p>
-                                <p>----</p>
+                                <p>@Model.About</p>
                             </div>
                         </div>
                     </div>

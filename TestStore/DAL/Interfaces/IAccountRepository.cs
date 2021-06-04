@@ -6,9 +6,9 @@ using DAL.Entities;
 
 namespace DAL.Interfaces
 {
-    interface IUserPasswordRepository
+    interface IAccountRepository
     {
-        Task<IdentityResult> CreateAsync(UserPassword item);
+        Task<IdentityResult> CreateAsync(User item);
         Task<SignInResult> UserSignInResult(string UserName, string Password, bool RememberMe);
         Task SignOutAsync();
         Task<User> GetByName(string username);
