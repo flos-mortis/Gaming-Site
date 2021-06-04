@@ -98,95 +98,11 @@
                                 <li><a href="">Strategy</a></li>
                             </ul>
                         </div>
-</ul>
+                </ul>
             </div>
         </nav>
         @RenderBody()
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col col-sm-12 col-md-9" style="min-height: 322px;">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="footer-col-inner row" id="footer-links">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="col">
-                                            <div class="social-list">
-                                                <a title="Twitter" href="#" target="_blank">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                                <a title="YouTube" href="#" target="_blank">
-                                                    <i class="fa fa-youtube"></i>
-                                                </a>
-                                                <a title="Vkontakte" href="#" target="_blank">
-                                                    <i class="fa fa-vk"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="footer-col-inner row">
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
-                                        <div class="col-module">
-                                            <div class="module-inner">
-                                                <h3 class="module-title">
-                                                    <span>Information</span>
-                                                </h3>
-                                                <div class="module-ct">
-                                                    <ul class="nav nav-pills nav-menu">
-                                                        <li><a asp-controller="Home" asp-action="About">About Us</a></li>
-                                                        <li><a asp-controller="Home" asp-action="Privacy">Privacy Policy</a></li>
-                                                        <li><a asp-controller="Home" asp-action="Terms_conditions">Term & Conditions</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
-                                        <div class="col-module">
-                                            <div class="module-inner">
-                                                <h3 class="module-title">
-                                                    <span>Information</span>
-                                                </h3>
-                                                <div class="module-ct">
-                                                    <ul class="nav nav-pills nav-menu">
-                                                        <li><a asp-controller="Profile" asp-action="Index">My Account</a></li>
-                                                        <li><a href="#">Order History</a></li>
-                                                        <li><a href="#">Shopping Cart</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-sm-12 col-md-3 footer-right"  style="min-height: 322px;">
-                        <div class="footer-col-inner">
-                            <div class="module-inner">
-                                <h3 class="module-title" id="contact-us-title">
-                                    <span>Contact Us</span>
-                                </h3>
-                                <div class="module-ct">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <section class="copyright">
-                <div class="container">
-                    <div class="footer-copy">
-                        <small>Copyright © 2021 Gaming Site. All Rights Reserved. Designed by </small>
-                        <a href="http:\\vk.com\siluwu">Silu Nurbakhtina</a>
-                    </div>
-                </div>
-            </section>
-        </footer>
+        @await Html.PartialAsync("../Shared/_Footer")
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
