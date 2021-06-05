@@ -26,19 +26,30 @@
                         </div>
                     </div>
                     <div class="head-right">
-                        <div class="head-language-switcher">
-                            <a href="#">
-                                <img src="../image/en-flag.jpg" class="en-flag">
-                            </a>
-                            <a href="#">
-                                <img src="../image/ru-flag.jpg" class="ru-flag">
-                            </a>
-                        </div>
                         @if (User.Identity.IsAuthenticated)
                         {
                             <div class="head-logout">
                                 <form method="post" asp-controller="Account" asp-action="Logout">
                                     <input class="register-switch" type="submit" value="Logout" />
+                                </form>
+                            </div>
+                            <div class="head-cart">
+                                <a class="btn btn-cart" asp-controller="Account" asp-action="Index">
+                                    <i class="fa fa-user"></i>
+                                </a>
+                            </div>
+                            <div class="head-cart">
+                                <a class="btn btn-cart" asp-controller="Shop" asp-action="Cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <p><span class="total-product">0</span></p>
+                                </a>
+                            </div>
+                            <div class="head-search">
+                                <form class="search-box" method="POST">
+                                    <input class="search-txt" name="" type="text" placeholder="Search ...">
+                                    <a class="search-btn" href="#">
+                                        <i class="fa fa-search"></i>
+                                    </a>
                                 </form>
                             </div>
                         }
@@ -54,21 +65,21 @@
                                     <input class="register-switch" type="button" value="Sign Up" />
                                 </a>
                             </div>
-                        }
-                        <div class="head-cart">
-                            <button class="btn btn-cart" type="button">
-                                <i class="fa fa-shopping-cart"></i>
-                                <p><span class="total-product">0</span></p>
-                            </button>
-                        </div>
-                        <div class="head-search">
-                            <form class="search-box" method="POST">
-                                <input class="search-txt" name="" type="text" placeholder="Search ...">
-                                <a class="search-btn" href="#">
-                                    <i class="fa fa-search"></i>
+                            <div class="head-cart">
+                                <a class="btn btn-cart" asp-controller="Shop" asp-action="Cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <p><span class="total-product">0</span></p>
                                 </a>
-                            </form>
-                        </div>
+                            </div>
+                            <div class="head-search">
+                                <form class="search-box" method="POST">
+                                    <input class="search-txt" name="" type="text" placeholder="Search ...">
+                                    <a class="search-btn" href="#">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                </form>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -109,6 +120,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    
     <script src="../js/site.js"></script>
 
     <script src="../js/map.js"></script>

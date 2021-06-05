@@ -397,7 +397,29 @@ p .total-product {
 .ru-flag {
     margin-left: 5px;
 }
+/*штуки чтоб меню сворачивалось-----------------------*/
+/*input[type="checkbox"] {
+    display: none;
+}
+nav label{
+    display:none;
+}
 
+@media only screen and (max-width: 500px) {
+
+    nav label {
+        display: inline-block;
+    }
+
+    nav > ul {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked ~ label + ul {
+        display: block;
+    }
+}*/
+/*----------------------------------------------------*/
 #mainnav {
     background-color: #131c27;
     margin-top: -32px;
@@ -434,7 +456,7 @@ p .total-product {
         border-left: 1px solid rgba(0, 0, 0, 0.3);
     }
 
-        #menu > li > a, .dropbtn {
+        #menu > li > a {
             color: #ffffff;
             text-transform: uppercase;
             font-size: 13px;
@@ -449,7 +471,7 @@ p .total-product {
             cursor: pointer;
         }
 
-            #menu > li > a:hover, .dropbtn:hover {
+            #menu > li > a:hover{
                 background: rgb(19, 28, 39);
             }
 
@@ -889,6 +911,11 @@ p .total-product {
     padding-right: 32px !important;
 }
 
+@media only screen and (max-width: 600px) {
+    .sidebar-left {
+        display: none;
+    }
+}
 .module {
     background: transparent;
     color: inherit;
@@ -1590,11 +1617,64 @@ legend + .control-group {
 ---------------------------------------------------------*/
 
 
-/*---------------------------------------------------
+/* -----------------------------------------------------------
+    -------------------------CART PAGE--------------------
+---------------------------------------------------------*/
+
+.cart-summary tr td {
+    border: 1px solid #ddd;
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.1);
+    padding: 5px 8px;
+    vertical-align: middle;
+}
+span.cart-image img {
+    margin-right: 10px;
+    width: 150px;
+}
+.cart-summary .cart-item-name a, .cart-item-price span{
+    color: #ffffff;
+    font-size: 20px;
+}
+.cart-summary .cart-item-delete i{
+    font-size: 23px;
+}
+.cart-summary .cart-item-delete button{
+    background-color: transparent;
+    background: none;
+    border: none;
+}
+    .cart-summary .cart-item-delete button:hover, .cart-summary .cart-item-delete button:focus {
+        background-color: #67c1f5;
+    }
+
+.cart-item-price, .cart-item-delete {
+    text-align: center;
+}
+.cart-total{
+    margin-top: 20px;
+}
+.total-price-block{
+    float: right;
+}
+
+
+
+    /* -----------------------------------------------------------
+    -------------------------CART PAGE END--------------------
+---------------------------------------------------------*/
+
+
+.account .fa{
+    heigh
+}
+
+
+    /*---------------------------------------------------
  ------------------футер начало----------------------
     ------------------------------------------------*/
 
-footer {
+    footer {
     background: #131c27;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #7a828b;
