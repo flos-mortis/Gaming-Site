@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Article>
+@{
     ViewData["Title"] = "News";
     Layout = "_Layout";
 }
@@ -62,6 +63,46 @@
                                     </section>
                                 </div>
                             </article>
+                            @foreach (var item in Model)
+                            {
+
+                                <article class="default">
+                                    <div class="pull-left item-image">
+                                        <a asp-controller="News" asp-action="NewsItem">
+                                            <img src="../image/FableLegend-2.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="item-content">
+                                        <section>
+                                            <h2 class="article-title">
+                                                <a asp-controller="News" asp-action="NewsItem">
+                                                    @item.Author.UserName offers new game @item.Name
+                                                </a>
+                                            </h2>
+                                        </section>
+                                        <aside class="article-aside">
+                                            <dl class="article-info">
+                                                <dd class="writtenBy">
+                                                    <i class="fa fa-user"></i>
+                                                    <span>@item.Author.UserName</span>
+                                                </dd>
+                                                <dd class="published">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <time>@item.DateCreated</time>
+                                                </dd>
+                                            </dl>
+                                        </aside>
+                                        <section class="article-intro">
+                                            @item.Content
+                                        </section>
+                                        <section class="readmore">
+                                            <a class="btn btn-primary" asp-controller="News" asp-action="NewsItem">
+                                                <span>Read More</span>
+                                            </a>
+                                        </section>
+                                    </div>
+                                </article>
+                            }
                         </div>
                     </div>
                 </div>
