@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +13,21 @@ namespace TestStore.Controllers
     public class NewsController : Controller
     {
         private ApplicationContext db;
-        public NewsController(ApplicationContext db)
+        private UserManager<User> userManager;
+        public NewsController(ApplicationContext db, UserManager<User> userManager)
         {
+            this.userManager = userManager;
             this.db = db;
         }
-        [Authorize(Roles ="admin")]
-        public IActionResult Index()
+        //[Authorize(Roles ="admin")]
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await db.Articles.ToListAsync());
         }
         [HttpGet]
         public IActionResult Create()
@@ -26,11 +35,17 @@ namespace TestStore.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Article article)
+        public async Task<IActionResult> Create(Article article)
         {
+            // article.Author = await userManager.FindByIdAsync(userManager.GetUserId(User));
+            //fffffffffffffffffffffffffffffffffffffff
+            //article.Author = user;
+
+            //var authorId = userManager.GetUserId(User);
+            //article.Author = await userManager.FindByIdAsync(authorId);
             db.Articles.Add(article);
-            db.SaveChanges();
-            return View();
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
         public IActionResult NewsItem(int id)
         {
