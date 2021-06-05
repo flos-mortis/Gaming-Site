@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace DAL.Repositories
 {
-    class UserPasswordRepository : IUserPasswordRepository
+    class UserPasswordRepository : IAccountRepository
     {
         private readonly UserManager<User> userManager;
         private readonly SignInManager<User> signInManager;
@@ -24,9 +24,9 @@ namespace DAL.Repositories
             return await userManager.ConfirmEmailAsync(user, code);
         }
 
-        public async Task<IdentityResult> CreateAsync(UserPassword item)
+        public async Task<IdentityResult> CreateAsync(User item)
         {
-            return await userManager.CreateAsync(item.User, item.Password);
+            return await userManager.CreateAsync(item);
         }
 
         public IEnumerable<User> GetAll()

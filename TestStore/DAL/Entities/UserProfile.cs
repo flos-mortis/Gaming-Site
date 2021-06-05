@@ -6,8 +6,7 @@ namespace DAL.Entities
     class UserProfile
     {
         [Key]
-        [ForeignKey("User")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [ForeignKey("User")]       
         public int Id { get; set; }    
         public string UserName { get; set; }
         public string Email { get; set; }

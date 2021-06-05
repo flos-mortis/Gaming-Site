@@ -397,7 +397,29 @@ p .total-product {
 .ru-flag {
     margin-left: 5px;
 }
+/*штуки чтоб меню сворачивалось-----------------------*/
+/*input[type="checkbox"] {
+    display: none;
+}
+nav label{
+    display:none;
+}
 
+@media only screen and (max-width: 500px) {
+
+    nav label {
+        display: inline-block;
+    }
+
+    nav > ul {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked ~ label + ul {
+        display: block;
+    }
+}*/
+/*----------------------------------------------------*/
 #mainnav {
     background-color: #131c27;
     margin-top: -32px;
@@ -889,6 +911,11 @@ p .total-product {
     padding-right: 32px !important;
 }
 
+@media only screen and (max-width: 600px) {
+    .sidebar-left {
+        display: none;
+    }
+}
 .module {
     background: transparent;
     color: inherit;

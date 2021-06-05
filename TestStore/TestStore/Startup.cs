@@ -11,9 +11,6 @@ using System.Threading.Tasks;
 using TestStore.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-//using TestStore.Data.Interfaces;
-//using TestStore.Data.Repository;
-//using TestStore.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace TestStore
