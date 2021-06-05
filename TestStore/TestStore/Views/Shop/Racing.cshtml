@@ -1,0 +1,138 @@
+﻿@{
+    ViewData["Title"] = "Racing";
+    Layout = "_Layout";
+}
+<div class="wrap masthead">
+    <div class="ja-masthead">
+        <div id="masthead-bg" style="background-image: url(../image/masthead.jpg)">
+            <div class="container">
+                <div class="masthead-detail">
+                    <h3 class="masthead-title">
+                        racing
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="mainbody" class="wrap mainbody one-sidebar-left">
+    <div class="container">
+        <div class="row equal-height">
+            @await Html.PartialAsync("../Shared/_Sidebar")
+            <div id="content" class="content col col-xs-12 col-sm-8 col-sm-push-4 col-md-9 col-md-push-3">
+                <div class="featured-view">
+                    <h4><span>All Products</span></h4>
+                    <div class="row equal-height equal-height-child">
+                        <div class="product vm-col vm-col-3 vertical-separator col">
+                            <div class="spacer">
+                                <div class="vm-product-media-container">
+                                    <a title="" href="#">
+                                        <img class="browseProductImage" src="../image/assassins_creed_chronicles.jpg" />
+                                    </a>
+                                </div>
+                                <div class="vm-product-descr-container">
+                                    <h2>
+                                        <a asp-controller="Shop" asp-action="Game_Profile">Game #1</a>
+                                    </h2>
+                                    <div class="platforms-field">
+                                        <span>
+                                            <i class="fa fa-android"></i>
+                                            <i class="fa fa-apple"></i>
+                                            <i class="fa fa-windows"></i>
+                                        </span>
+                                    </div>
+                                    <p class="product-desc">
+                                        This game is about ummm umm mm umm
+                                    </p>
+                                </div>
+                                <div class="product-price-block">
+                                    <div class="base-price price-block">
+                                        <span class="price-desc">
+                                            Base price:
+                                        </span>
+                                        <span class="base-price-val">
+                                            $44.5
+                                        </span>
+                                    </div>
+                                    <div class="sale-price price-block">
+                                        <span class="price-desc">
+                                            Sales price:
+                                        </span>
+                                        <span class="sale-price-val">
+                                            $44.5
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="addtocart-block">
+                                    <form method="post">
+                                        <div class="addtocart-bar">
+                                            <span class="addtocart-button">
+                                                <input type="submit" value="Add to Cart" />
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="horizontal-separator"></div>
+                    <div class="row equal-height equal-height-child">
+                        <div class="product vm-col vm-col-3 vertical-separator col">
+                            <div class="spacer">
+                                <div class="vm-product-media-container">
+                                    <a title="" href="#">
+                                        <img class="browseProductImage" src="../image/assassins_creed_chronicles.jpg" />
+                                    </a>
+                                </div>
+                                <div class="vm-product-descr-container">
+                                    <h2>
+                                        <a asp-controller="Shop" asp-action="Game_Profile">Game #1</a>
+                                    </h2>
+                                    <div class="platforms-field">
+                                        <span>
+                                            <i class="fa fa-android"></i>
+                                            <i class="fa fa-apple"></i>
+                                            <i class="fa fa-windows"></i>
+                                        </span>
+                                    </div>
+                                    <p class="product-desc">
+                                        This game is about ummm umm mm umm
+                                    </p>
+                                </div>
+                                <div class="product-price-block">
+                                    <div class="base-price price-block">
+                                        <span class="price-desc">
+                                            Base price:
+                                        </span>
+                                        <span class="base-price-val">
+                                            $44.5
+                                        </span>
+                                    </div>
+                                    <div class="sale-price price-block">
+                                        <span class="price-desc">
+                                            Sales price:
+                                        </span>
+                                        <span class="sale-price-val">
+                                            $44.5
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="addtocart-block">
+                                    <form method="post">
+                                        <div class="addtocart-bar">
+                                            <span class="addtocart-button">
+                                                <input type="submit" value="Add to Cart" />
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

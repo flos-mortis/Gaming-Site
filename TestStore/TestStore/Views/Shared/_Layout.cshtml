@@ -45,9 +45,9 @@
                                 </a>
                             </div>
                             <div class="head-search">
-                                <form class="search-box" method="POST">
-                                    <input class="search-txt" name="" type="text" placeholder="Search ...">
-                                    <a class="search-btn" href="#">
+                                <form class="search-box" method="get" asp-controller="Home" asp-action="Index">
+                                    <input class="search-txt" name="searchString" type="text" placeholder="Search ...">
+                                    <a class="search-btn">
                                         <i class="fa fa-search"></i>
                                     </a>
                                 </form>
@@ -72,9 +72,9 @@
                                 </a>
                             </div>
                             <div class="head-search">
-                                <form class="search-box" method="POST">
-                                    <input class="search-txt" name="" type="text" placeholder="Search ...">
-                                    <a class="search-btn" href="#">
+                                <form class="search-box" method="get" asp-controller="Home" asp-action="Index">
+                                    <input class="search-txt" name="searchString" type="text" placeholder="Search ...">
+                                    <a class="search-btn">
                                         <i class="fa fa-search"></i>
                                     </a>
                                 </form>
@@ -97,15 +97,10 @@
                                 <li><a href="">Action</a></li>
                                 <li><a href="">Adventure</a></li>
                                 <li><a href="">Casual</a></li>
-                                <li><a href="">Free To Play</a></li>
-                                <li><a href="">Indie</a></li>
-                                <li><a href="">Massively Multiplayer</a></li>
                             </ul>
                             <ul class="dropdown-right">
                                 <li><a href="">Racing</a></li>
                                 <li><a href="">RPG</a></li>
-                                <li><a href="">Simulation</a></li>
-                                <li><a href="">Sports</a></li>
                                 <li><a href="">Strategy</a></li>
                             </ul>
                         </div>
