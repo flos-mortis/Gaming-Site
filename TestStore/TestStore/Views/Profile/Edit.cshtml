@@ -10,7 +10,17 @@
                     <div id="content" class="content" style="padding-top: 58.57142858px;">
                         <div class="module-left-side-content" style="width:30%;">
                             <div class="module avatar-module">
-                                <img src="~/image/ava-example.jpg" />
+                                @if (Model != null)
+                                {
+                                    if (Model.Picture == null)
+                                    {
+                                    <img src="~/image/ava-example.jpg" />
+                                    }
+                                    else
+                                    {
+                                    <img src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.OldPicture))" />
+                                    }
+                                }
                                 <input asp-for="Picture" type="file" style="margin-top: 10px;" value="Edit avatar">
                             </div>
                         </div>
@@ -26,14 +36,14 @@
                                             <span>Email:</span>
                                             <input type="email" asp-for="Email" required />
                                         </div>
-                                        <div class="gender info-field">
+                                        <!--<div class="gender info-field">
                                             <span>Gender:</span>
                                             <select required>
                                                 <option>Currently is</option>
                                                 <option>Not</option>
                                                 <option>Working</option>
                                             </select>
-                                        </div>
+                                        </div>-->
                                         <div class="country info-field">
                                             <span>Country:</span>
                                             <input type="text" asp-for="Country"/>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,7 +14,8 @@ namespace TestStore.ViewModels
         public string Email { get; set; }
         public int Year { get; set; }
         public string Country { get; set; }
-        public byte[] Picture { get; set; }
+        public IFormFile Picture { get; set; }
+        public byte[] OldPicture { get; set; }
         public Game FavGame { get; set; }
         public string About { get; set; }
     }

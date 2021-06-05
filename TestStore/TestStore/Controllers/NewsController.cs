@@ -32,9 +32,9 @@ namespace TestStore.Controllers
             db.SaveChanges();
             return View();
         }
-        public IActionResult NewsItem()
+        public IActionResult NewsItem(int id)
         {
-            return View();
+            return View(db.Articles.Find(id));
         }
     }
 }

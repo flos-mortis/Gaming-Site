@@ -46,9 +46,24 @@ namespace TestStore.Controllers
                     user.About = model.About;
                     user.Country = model.Country;
                     user.UserName = model.UserName;
-                    user.Year = model.Year;
-                    user.Picture = model.Picture;
-                    user.Email = model.Email;
+                    user.Year = model.Year;                    
+                    user.Email = model.Email;                  
+
+                    if(model.Picture != null)
+                    {
+                        if(model.Picture.Length > 0)
+                        {
+                            byte[] pic = null;
+                            using (var fs = model.Picture.OpenReadStream()) 
+                            using (var ms = new MemoryStream())
+                            {
+                                fs.CopyTo(ms);
+                                pic = ms.ToArray();
+                            }
+                            user.Picture = pic;
+                            model.OldPicture = pic;
+                        }
+                    }
                     var result = await userManager.UpdateAsync(user);
                     if(result.Succeeded)
                         return RedirectToAction("Index");
