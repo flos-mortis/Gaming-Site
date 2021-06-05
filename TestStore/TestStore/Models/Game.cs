@@ -17,6 +17,7 @@ namespace TestStore.Models
         [Required]
         public decimal Price { get; set; }
         public decimal SalePrice { get; set; }
-        //public int GenreId { get; set; }
+        public int GenreId { get; set; }
+        //public ICollection<User> Users { get; set; }
     }
 }

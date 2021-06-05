@@ -13,5 +13,6 @@ namespace TestStore.Models
         public string Country { get; set; }
         public byte[] Picture { get; set; }
         public virtual Game FavGame { get; set; }
+        //public ICollection<Game> Games { get; set; }
     }
 }

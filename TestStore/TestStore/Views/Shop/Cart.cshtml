@@ -2,6 +2,10 @@
     ViewData["Title"] = "Shop";
     Layout = "_Layout";
 }
+@model TestStore.ViewModels.OrderViewModel
+@foreach (var item in Model.Games)
+{
+    @Model.Games.Count
 <div class="wrap masthead">
     <div class="ja-masthead">
         <div id="masthead-bg" style="background-image: url(../image/masthead.jpg)">
@@ -27,7 +31,7 @@
                                     <span class="cart-image">
                                         <img src="~/image/assassins_creed_chronicles.jpg" />
                                     </span>
-                                    <a href="#">Murad Game</a>
+                                    <a href="#">@item.Name</a>
                                 </td>
                                 <td class="cart-item-price">
                                     <span>59,99$</span>
@@ -101,3 +105,4 @@
         </div>
     </div>
 </div>
+}
