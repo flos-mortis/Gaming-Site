@@ -456,7 +456,7 @@ nav label{
         border-left: 1px solid rgba(0, 0, 0, 0.3);
     }
 
-        #menu > li > a, .dropbtn {
+        #menu > li > a {
             color: #ffffff;
             text-transform: uppercase;
             font-size: 13px;
@@ -471,7 +471,7 @@ nav label{
             cursor: pointer;
         }
 
-            #menu > li > a:hover, .dropbtn:hover {
+            #menu > li > a:hover{
                 background: rgb(19, 28, 39);
             }
 
