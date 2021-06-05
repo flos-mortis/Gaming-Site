@@ -7,8 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TestStore.Models;
-using TestStore.Models;
 using TestStore.ViewModels;
+using System.Security.Claims;
 
 namespace TestStore.Controllers
 {
@@ -34,21 +34,26 @@ namespace TestStore.Controllers
         [Authorize]
         public async Task<IActionResult> Cart()
         {
-            User user = await userManager.GetUserAsync(User);
+            User user = await userManager.GetUserAsync(HttpContext.User);
             var viewModel = new OrderViewModel();
-            viewModel.Games.AddRange(db.Games.Join(db.Orders.Where(ord => ord.UserId == user.Id),
-                g => g.Id,
-                o => o.GameId,
-                (g, o) => new Game { Id = o.GameId}   )    
-                );
+            if (db.Games != null)
+            {
+                viewModel.Games.AddRange(db.Games.Join(db.Orders.Where(ord => ord.UserId == user.Id),
+                    g => g.Id,
+                    o => o.GameId,
+                    (g, o) => new Game { Id = o.GameId })
+                    );
+            }
             return View(viewModel);
         }
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> AddToCart(Game game)
         {
-            User user = await userManager.GetUserAsync(User);
-            db.Orders.Add(new Order { GameId = game.Id, UserId = user.Id });
-            await db.SaveChangesAsync();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            Order order = new Order { GameId = game.Id, UserId = userId };
+            db.Orders.Add(order);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
         [Authorize]

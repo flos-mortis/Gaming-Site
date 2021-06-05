@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using TestStore.Services;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Security.Claims;
 
 namespace TestStore
 {
@@ -41,45 +42,14 @@ namespace TestStore
                 .AddDefaultTokenProviders();
             /*services.AddTransient<IGames, GameRepository>();
             services.AddTransient<IGenre, GenreRepository>();*/
-
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            services.Configure<IdentityOptions>(options => options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier);
+            services.AddAuthentication()
                 .AddGoogle(opts =>
                 {
                     opts.ClientId = "376565521633-ovqjk2hotfb7e5jsm1mj5r0pu1brdd2q.apps.googleusercontent.com";
                     opts.ClientSecret = "i0p0c0dxOwSCUE5Q3HfvOtX9";
                     opts.SignInScheme = IdentityConstants.ExternalScheme;
-                })
-            .AddJwtBearer(options =>
-             {
-                 options.RequireHttpsMetadata = false;
-                 options.TokenValidationParameters = new TokenValidationParameters
-                 {
-                     ValidateIssuer = true,
-                     ValidIssuer = AuthOptions.ISSUER,
-                     ValidateAudience = true,
-                     ValidAudience = AuthOptions.AUDIENCE,
-                     ValidateLifetime = true,
-                     IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
-                     ValidateIssuerSigningKey = true,
-                 };
-                 options.Events = new JwtBearerEvents
-                 {
-                     OnMessageReceived = context =>
-                     {
-                         var accessToken = context.Request.Query["access_token"];
-
-                         // если запрос направлен хабу
-                         var path = context.HttpContext.Request.Path;
-                         if (!string.IsNullOrEmpty(accessToken) &&
-                             (path.StartsWithSegments("/chatter")))
-                         {
-                             // получаем токен из строки запроса
-                             context.Token = accessToken;
-                         }
-                         return Task.CompletedTask;
-                     }
-                 };
-             });
+                });
                  services.AddControllersWithViews();
 
             services.AddSignalR();

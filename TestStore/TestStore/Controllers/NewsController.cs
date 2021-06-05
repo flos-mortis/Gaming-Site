@@ -24,7 +24,7 @@ namespace TestStore.Controllers
         //{
         //    return View();
         //}
-        [Authorize(Roles = "admin")]
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             return View(await db.Articles.ToListAsync());
@@ -34,6 +34,7 @@ namespace TestStore.Controllers
         {
             return View();
         }
+        [Authorize(Roles ="Admin")]
         [HttpPost]
         public async Task<IActionResult> Create(Article article)
         {
