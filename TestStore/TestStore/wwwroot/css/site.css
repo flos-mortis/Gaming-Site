@@ -1590,11 +1590,57 @@ legend + .control-group {
 ---------------------------------------------------------*/
 
 
-/*---------------------------------------------------
+/* -----------------------------------------------------------
+    -------------------------CART PAGE--------------------
+---------------------------------------------------------*/
+
+.cart-summary tr td {
+    border: 1px solid #ddd;
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.1);
+    padding: 5px 8px;
+    vertical-align: middle;
+}
+span.cart-image img {
+    margin-right: 10px;
+    width: 150px;
+}
+.cart-summary .cart-item-name a, .cart-item-price span{
+    color: #ffffff;
+    font-size: 20px;
+}
+.cart-summary .cart-item-delete i{
+    font-size: 23px;
+}
+.cart-summary .cart-item-delete button{
+    background-color: transparent;
+    background: none;
+    border: none;
+}
+    .cart-summary .cart-item-delete button:hover, .cart-summary .cart-item-delete button:focus {
+        background-color: #67c1f5;
+    }
+
+.cart-item-price, .cart-item-delete {
+    text-align: center;
+}
+.cart-total{
+    margin-top: 20px;
+}
+.total-price-block{
+    float: right;
+}
+
+
+
+    /* -----------------------------------------------------------
+    -------------------------CART PAGE END--------------------
+---------------------------------------------------------*/
+    /*---------------------------------------------------
  ------------------футер начало----------------------
     ------------------------------------------------*/
 
-footer {
+    footer {
     background: #131c27;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #7a828b;
