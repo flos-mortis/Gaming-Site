@@ -25,9 +25,14 @@ namespace TestStore.Controllers
         //    return View();
         //}
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await db.Games.ToListAsync());
+            var games = from s in db.Games select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                games = games.Where(s => s.Name.Contains(searchString) || s.Description.Contains(searchString));
+            }
+            return View(await games.AsNoTracking().ToListAsync());
         }
         public IActionResult About()
         {
