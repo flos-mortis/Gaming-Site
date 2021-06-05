@@ -12,6 +12,9 @@ using TestStore.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using TestStore.Services;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace TestStore
 {
@@ -39,14 +42,47 @@ namespace TestStore
             /*services.AddTransient<IGames, GameRepository>();
             services.AddTransient<IGenre, GenreRepository>();*/
 
-            services.AddAuthentication()
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddGoogle(opts =>
                 {
                     opts.ClientId = "376565521633-ovqjk2hotfb7e5jsm1mj5r0pu1brdd2q.apps.googleusercontent.com";
                     opts.ClientSecret = "i0p0c0dxOwSCUE5Q3HfvOtX9";
                     opts.SignInScheme = IdentityConstants.ExternalScheme;
-                });
-            services.AddControllersWithViews();
+                })
+            .AddJwtBearer(options =>
+             {
+                 options.RequireHttpsMetadata = false;
+                 options.TokenValidationParameters = new TokenValidationParameters
+                 {
+                     ValidateIssuer = true,
+                     ValidIssuer = AuthOptions.ISSUER,
+                     ValidateAudience = true,
+                     ValidAudience = AuthOptions.AUDIENCE,
+                     ValidateLifetime = true,
+                     IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
+                     ValidateIssuerSigningKey = true,
+                 };
+                 options.Events = new JwtBearerEvents
+                 {
+                     OnMessageReceived = context =>
+                     {
+                         var accessToken = context.Request.Query["access_token"];
+
+                         // если запрос направлен хабу
+                         var path = context.HttpContext.Request.Path;
+                         if (!string.IsNullOrEmpty(accessToken) &&
+                             (path.StartsWithSegments("/chatter")))
+                         {
+                             // получаем токен из строки запроса
+                             context.Token = accessToken;
+                         }
+                         return Task.CompletedTask;
+                     }
+                 };
+             });
+                 services.AddControllersWithViews();
+
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -75,6 +111,7 @@ namespace TestStore
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapHub<ChatHub>("/chatter");
             });
         }
     }
