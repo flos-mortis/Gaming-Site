@@ -20,5 +20,9 @@ namespace TestStore.Controllers
         {
             return View();
         }
+        public IActionResult Payment()
+        {
+            return View();
+        }
     }
 }
