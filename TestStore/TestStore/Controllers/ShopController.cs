@@ -14,20 +14,15 @@ namespace TestStore.Controllers
 {
     public class ShopController : Controller
     {
+        UserManager<User> userManager;
         private readonly ILogger<ShopController> _logger;
         private ApplicationContext db;
-        public ShopController(ILogger<ShopController> logger, ApplicationContext db)
+        public ShopController(ILogger<ShopController> logger, ApplicationContext db, UserManager<User> userManager)
         {
             _logger = logger;
             this.db = db;
-        }
-        ApplicationContext db;
-        UserManager<User> userManager;
-        public ShopController(ApplicationContext db, UserManager<User> userManager)
-        {
-            this.db = db;
             this.userManager = userManager;
-        }
+        }      
         public IActionResult Index()
         {
             return View();
