@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using TestStore.Models;
 using TestStore.ViewModels;
 using System.Security.Claims;
+using System.Web;
 
 namespace TestStore.Controllers
 {
@@ -32,28 +33,79 @@ namespace TestStore.Controllers
             return View();
         }
         [Authorize]
-        public async Task<IActionResult> Cart()
+        public IActionResult Cart()
         {
-            User user = await userManager.GetUserAsync(HttpContext.User);
             var viewModel = new OrderViewModel();
+            
             if (db.Games != null)
-            {
-                viewModel.Games.AddRange(db.Games.Join(db.Orders.Where(ord => ord.UserId == user.Id),
+            {                
+                
+                /*viewModel.Games.AddRange(db.Games.Join(db.Orders.Where(ord => ord.UserId == userId),
                     g => g.Id,
                     o => o.GameId,
                     (g, o) => new Game { Id = o.GameId })
-                    );
+                    );*/
+                viewModel.Games = GetOrderList();
             }
-            return View(viewModel);
+            if (viewModel.Games != null)
+            {
+                return View(viewModel.Games);
+            }
+            else return View("Index");
+            }
+        public List<Game> GetOrderList()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            List<Game> orderList = new List<Game>();
+            orderList.AddRange(db.Games.Join(db.Orders.Where(ord => ord.UserId == userId),
+                    g => g.Id,
+                    o => o.GameId,
+                    (g, o) => new Game { Id = g.Id, Description = g.Description, Price = g.Price, SalePrice = g.SalePrice, GenreId = g.GenreId, Name = g.Name })
+                    );
+            return orderList;
+        }
+        [HttpGet]
+        public IActionResult DeleteCartItem(int id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var orderToDelete = db.Orders
+                .Where(ord => ord.GameId == id && ord.UserId == userId)
+                .FirstOrDefault();
+            if (orderToDelete == null)
+            {
+                return View("Index");
+            }
+            return View(id);
+        }
+        [HttpPost, ActionName("DeleteCartItem")]
+        public IActionResult DeleteCartItemConfirmed(int id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var orderToDelete = db.Orders
+                .Where(ord => ord.GameId == id && ord.UserId == userId)
+                .FirstOrDefault();
+            if (orderToDelete == null)
+            {
+                return View("Index");
+            }
+            db.Orders.Remove(orderToDelete);
+            db.SaveChanges();
+            return View("Index");
         }
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> AddToCart(Game game)
+        public IActionResult AddToCart(int id)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            Order order = new Order { GameId = game.Id, UserId = userId };
-            db.Orders.Add(order);
-            db.SaveChanges();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier) ;
+            Order order = new Order { GameId = id, UserId = userId };
+            var orderExists = db.Orders
+                .Where(ord => ord.GameId == order.GameId && ord.UserId == order.UserId)
+                .FirstOrDefault();
+            if (orderExists == null)
+            {
+                db.Orders.Add(order);
+                db.SaveChanges();
+            }
             return RedirectToAction("Index");
         }
         [Authorize]
@@ -75,6 +127,10 @@ namespace TestStore.Controllers
                     games = games.OrderBy(b => b.Price);
                     break;
             }
+            return View();
+        }
+        public IActionResult Error()
+        {
             return View();
         }
     }
