@@ -129,6 +129,10 @@ namespace TestStore.Controllers
             }
             return View();
         }
+        public int CountItems()
+        {
+            return GetOrderList().Count();
+        }
         public IActionResult Error()
         {
             return View();
