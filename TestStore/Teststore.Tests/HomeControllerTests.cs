@@ -9,12 +9,14 @@ using Teststore.Controllers;
 
 namespace Teststore.Tests
 {
-    class HomeControllerTests
+    public class HomeControllerTests
     {
         [Fact]
         public void IndexViewDataMessage()
         {
-            HomeController controller = new HomeController()
+            HomeController controller = new HomeController();
+            ViewResult result = controller.Index() as ViewResult;
+            Assert.NotNull(result);
         }
     }
 }

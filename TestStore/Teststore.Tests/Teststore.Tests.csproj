@@ -72,14 +72,6 @@
     <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{95a41ca2-7df8-47da-a7cd-48a51518a657}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{afa832d5-a1fc-4c86-bf03-31d9af0b263d}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TestStore\TestStore.csproj">
       <Project>{d971e4e2-cb03-43b1-b829-368076db9cc0}</Project>
       <Name>TestStore</Name>
